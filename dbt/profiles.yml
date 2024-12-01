@@ -1,0 +1,12 @@
+financial_data:
+  outputs:
+    dev:
+      type: postgres
+      threads: 1  # Aumente se o ambiente suportar mais threads para processamento
+      host: "{{ env_var('DBT_HOST') }}"  # Endereço do banco PostgreSQL
+      port: "{{ env_var('DBT_PORT') | as_number }}"  # Porta configurada
+      user: "{{ env_var('DBT_USER') }}"  # Usuário do banco de dados
+      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"  # Senha do banco de dados
+      dbname: "{{ env_var('DBT_DATABASE', 'financial_data_db') }}"  # Nome do banco
+      schema: "{{ env_var('DBT_SCHEMA', 'public') }}"  # Esquema padrão
+  target: dev

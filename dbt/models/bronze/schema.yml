@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: bronze
+    tables:
+      - name: financial_data
+        description: "Dados crus de mercado financeiro capturados da API."
+        columns:
+          - name: ticker
+            description: "Símbolo da ação (ex: AAPL para Apple)."
+          - name: price
+            description: "Preço da ação no momento da captura."
+          - name: volume
+            description: "Volume de transações no período capturado."
+          - name: date
+            description: "Data da captura."
+
+models:
+  - name: financial_data
+    description: "Modelo que reflete os dados crus da camada Bronze."

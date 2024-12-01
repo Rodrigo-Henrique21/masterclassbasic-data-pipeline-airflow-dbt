@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: cleaned_financial_data
+    description: "Modelo que limpa e transforma os dados da camada Bronze."
+    columns:
+      - name: ticker
+        description: "Símbolo da ação (ex: AAPL para Apple)."
+      - name: price
+        description: "Preço da ação no momento da captura (decimal)."
+      - name: volume
+        description: "Volume de transações no período capturado (inteiro)."
+      - name: trade_date
+        description: "Data da captura no formato de data."

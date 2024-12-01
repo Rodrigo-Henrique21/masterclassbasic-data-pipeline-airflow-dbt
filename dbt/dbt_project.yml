@@ -1,0 +1,38 @@
+name: 'financial_data_pipeline'
+version: '1.0'
+profile: 'financial_data'
+config-version: 2
+
+# Caminhos para as pastas de recursos
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["data"]
+macro-paths: ["macros"]
+
+# Diretório de saída
+target-path: "target"
+clean-targets:
+    - "target"
+    - "dbt_modules"
+    - "logs"
+
+# Configuração de modelos
+models:
+  financial_data_pipeline:
+    materialized: table
+
+    bronze:
+      +schema: "bronze"
+      +tags: ["bronze"]
+      materialized: table  # Persistência dos dados crus em tabelas
+
+    silver:
+      +schema: "silver"
+      +tags: ["silver"]
+      materialized: incremental  # Otimização para dados transformados
+
+    gold:
+      +schema: "gold"
+      +tags: ["gold"]
+      materialized: table  # Consolidado para análises finais

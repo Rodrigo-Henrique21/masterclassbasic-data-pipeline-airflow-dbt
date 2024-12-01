@@ -1,3 +1,4 @@
+-- Modelo Bronze
 select
     *
-from {{ source('bronze', 'financial_data') }}
+from public.bronze_financial_data

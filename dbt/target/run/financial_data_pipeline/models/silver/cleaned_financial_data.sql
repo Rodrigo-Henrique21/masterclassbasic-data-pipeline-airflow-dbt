@@ -1,4 +1,15 @@
--- Modelo da camada Silver
+
+      
+  
+    
+
+  create  table "airflow"."public_silver"."cleaned_financial_data"
+  
+  
+    as
+  
+  (
+    -- Modelo da camada Silver
 with raw_data as (
     select
         *,
@@ -18,3 +29,6 @@ cleaned_data as (
 select
     *
 from cleaned_data
+  );
+  
+  

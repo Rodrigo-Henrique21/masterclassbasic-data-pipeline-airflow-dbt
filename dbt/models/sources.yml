@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: bronze_financial_data
+
+  - name: silver
+    schema: silver
+    tables:
+      - name: cleaned_financial_data
+
+  - name: gold
+    schema: gold
+    tables:
+      - name: aggregated_financial_data

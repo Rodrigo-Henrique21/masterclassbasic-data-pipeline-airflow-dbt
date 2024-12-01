@@ -1,4 +1,14 @@
--- Modelo da camada Gold
+
+  
+    
+
+  create  table "airflow"."public_gold"."aggregated_financial_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    -- Modelo da camada Gold
 with daily_aggregates as (
     select
         date as transaction_date,
@@ -14,3 +24,5 @@ select
     *
 from daily_aggregates
 order by transaction_date
+  );
+  

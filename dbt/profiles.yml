@@ -7,6 +7,6 @@ financial_data:
       port: "{{ env_var('DBT_PORT') | as_number }}"  # Porta configurada
       user: "{{ env_var('DBT_USER') }}"  # Usuário do banco de dados
       pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"  # Senha do banco de dados
-      dbname: "{{ env_var('DBT_DATABASE', 'financial_data_db') }}"  # Nome do banco
+      dbname: "{{ env_var('DBT_DATABASE', 'airflow') }}"  # Nome do banco
       schema: "{{ env_var('DBT_SCHEMA', 'public') }}"  # Esquema padrão
   target: dev

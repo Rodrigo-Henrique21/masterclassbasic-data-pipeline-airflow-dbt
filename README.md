@@ -8,55 +8,58 @@
 
 <img src="imagem.png" alt="Exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Pipeline para ingestão, transformação e orquestração de dados utilizando Airflow e DBT, com um modelo escalável e estruturado.
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- [x] Estruturação do ambiente
+- [x] Captura e ingestão de dados.
+- [x] Implementação do modelo DBT para camadas Bronze, Silver e Gold.
+- [ ] Validação de qualidade de dados.
+- [ ] PowerBi
+
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+- Docker instalado na máquina (versão mais recente).
+- Docker Compose configurado.
+- Python 3.9 ou superior.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando <Data Pipeline>
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
+Para instalar o [(https://github.com/Rodrigo-Henrique21/data-pipeline-airflow-dbt.git)], siga estas etapas:
 
 Linux e macOS:
 
 ```
-<comando_de_instalação>
+docker-compose up --build
 ```
 
 Windows:
 
 ```
-<comando_de_instalação>
+docker-compose up --build
 ```
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Usando <Data Pipeline>
 
-Para usar <nome_do_projeto>, siga estas etapas:
+Para usar <Data Pipeline>, siga estas etapas:
 
 ```
-<exemplo_de_uso>
+Inicie os contêineres com o comando acima.
+Acesse o Airflow pela URL http://localhost:8080 (login padrão: airflow/airflow).
+Acompanhe as DAGs configuradas no diretório dags/.
 ```
 
 Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
 
-## 📫 Contribuindo para <nome_do_projeto>
+## 📫 Contribuindo para <Data Pipeline>
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+Para contribuir com <Data Pipeline>, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.

@@ -1,10 +1,10 @@
-# Nome do projeto
+# Data Pipeline dados financeiros
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
+![GitHub open issues](https://img.shields.io/github/issues/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
 
 <img src="imagem.png" alt="Exemplo imagem">
 
@@ -76,8 +76,8 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="" width="100px;" alt=""/><br>
+      <a href="https://github.com/Rodrigo-Henrique21" title="Perfil no GitHub">
+        <img src="https://avatars.githubusercontent.com/u/137960299?v=4" width="100px;" alt="Rodrigo Henrique"/><br>
         <sub>
           <b>Rodrigo Henrique</b>
         </sub>

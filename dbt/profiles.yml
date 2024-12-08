@@ -1,12 +1,23 @@
-financial_data:
+financas_data:
   outputs:
     dev:
       type: postgres
-      threads: 1  # Aumente se o ambiente suportar mais threads para processamento
+      threads: 1
       host: "{{ env_var('DBT_HOST') }}"  # Endereço do banco PostgreSQL
-      port: "{{ env_var('DBT_PORT') | as_number }}"  # Porta configurada
+      port: "{{ env_var('DBT_PORT') | as_number }}"  # Porta de conexão
       user: "{{ env_var('DBT_USER') }}"  # Usuário do banco de dados
       pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"  # Senha do banco de dados
-      dbname: "{{ env_var('DBT_DATABASE', 'airflow') }}"  # Nome do banco
-      schema: "{{ env_var('DBT_SCHEMA', 'public') }}"  # Esquema padrão
-  target: dev
+      dbname: "{{ env_var('DBT_DATABASE', 'airflow') }}"  # Nome do banco de dados (fallback: 'airflow')
+      schema: "{{ env_var('DBT_SCHEMA', 'public') }}"  # Esquema padrão (pode ser ajustado no modelo)
+
+    prd:
+      type: postgres
+      threads: 2  # Maior número de threads para melhorar performance
+      host: "{{ env_var('DBT_HOST') }}"  # Endereço do banco PostgreSQL
+      port: "{{ env_var('DBT_PORT') | as_number }}"  # Porta de conexão
+      user: "{{ env_var('DBT_USER') }}"  # Usuário do banco de dados
+      pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"  # Senha do banco de dados
+      dbname: "{{ env_var('DBT_DATABASE', 'dw_nerds_prd') }}"  # Nome do banco de dados (fallback: 'dw_nerds_prd')
+      schema: "{{ env_var('DBT_SCHEMA') }}"  # Esquema padrão (pode ser ajustado no modelo)
+
+  target: prd  # Define o ambiente a ser utilizado

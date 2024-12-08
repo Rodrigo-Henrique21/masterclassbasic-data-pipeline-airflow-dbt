@@ -1,6 +1,6 @@
-name: 'financial_data_pipeline'
+name: 'financas_data_pipeline'
 version: '1.0'
-profile: 'financial_data'
+profile: 'financas_data'
 config-version: 2
 
 # Caminhos para as pastas de recursos
@@ -19,20 +19,26 @@ clean-targets:
 
 # Configuração de modelos
 models:
-  financial_data_pipeline:
-    materialized: table
+  financas_data_pipeline:
+    +materialized: table  # Configuração padrão para modelos
+    +persist_docs: {"relation": true, "columns": true}  # Persistir documentação
 
     bronze:
       +schema: "bronze"
       +tags: ["bronze"]
-      materialized: table  # Persistência dos dados crus em tabelas
+      +materialized: table  # Tabelas para dados crus na camada Bronze
+      +persist_docs: {"relation": true}  # Documentação para tabelas na camada Bronze
 
-    silver:
-      +schema: "silver"
-      +tags: ["silver"]
-      materialized: incremental  # Otimização para dados transformados
+    prata:
+      +schema: "prata"
+      +tags: ["prata"]
+      +materialized: incremental  # Incremental para melhorar performance na camada Prata
+      +incremental_strategy: merge  # Estratégia de atualização incremental
+      +unique_key: ["data", "ativo"]  # Chave única para mesclagem incremental
+      +persist_docs: {"relation": true, "columns": true}  # Persistir documentação completa
 
-    gold:
-      +schema: "gold"
-      +tags: ["gold"]
-      materialized: table  # Consolidado para análises finais
+    ouro:
+      +schema: "ouro"
+      +tags: ["ouro"]
+      +materialized: table  # Tabelas finais consolidadas na camada Ouro
+      +persist_docs: {"relation": true, "columns": true}  # Persistir documentação completa

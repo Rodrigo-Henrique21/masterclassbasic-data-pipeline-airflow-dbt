@@ -2,16 +2,30 @@ version: 2
 
 sources:
   - name: bronze
+    description: "Camada Bronze: Dados crus coletados diretamente de APIs e outras fontes externas."
     schema: bronze
     tables:
-      - name: bronze_financial_data
+      - name: ativos
+        description: "Tabela de dados crus sobre ativos financeiros."
+      - name: indicadores
+        description: "Tabela de dados crus sobre indicadores técnicos."
+      - name: tesouro
+        description: "Tabela de dados crus sobre rendimentos do Tesouro."
 
-  - name: silver
-    schema: silver
+  - name: prata
+    description: "Camada Prata: Dados transformados, limpos e padronizados."
+    schema: prata
     tables:
-      - name: cleaned_financial_data
+      - name: ativos
+        description: "Tabela transformada contendo dados limpos sobre ativos financeiros."
+      - name: indicadores
+        description: "Tabela transformada contendo dados limpos sobre indicadores técnicos."
+      - name: tesouro
+        description: "Tabela transformada contendo dados limpos sobre rendimentos do Tesouro."
 
-  - name: gold
-    schema: gold
+  - name: ouro
+    description: "Camada Ouro: Dados consolidados e prontos para análise."
+    schema: ouro
     tables:
-      - name: aggregated_financial_data
+      - name: portfolio
+        description: "Tabela final consolidada contendo informações sobre ativos, indicadores e Tesouro."

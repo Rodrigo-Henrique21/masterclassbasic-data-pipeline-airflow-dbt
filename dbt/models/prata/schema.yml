@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: ativos
+    schema: prata
+    description: "Tabela refinada de ativos financeiros, ajustada para padronizar os dados e traduzir colunas."
+    columns:
+      - name: data
+        description: "Data do registro."
+      - name: preco_abertura
+        description: "Preço de abertura do ativo no dia."
+      - name: preco_alto
+        description: "Preço mais alto do ativo no dia."
+      - name: preco_baixo
+        description: "Preço mais baixo do ativo no dia."
+      - name: preco_fechamento
+        description: "Preço de fechamento do ativo no dia."
+      - name: volume_negociado
+        description: "Volume total de negociações do ativo no dia."
+      - name: ativo
+        description: "Código do ativo."
+
+  - name: indicadores
+    schema: prata
+    description: "Tabela refinada de indicadores técnicos, ajustada para padronizar os dados e traduzir colunas."
+    columns:
+      - name: data
+        description: "Data do registro."
+      - name: ativo
+        description: "Código do ativo."
+      - name: indicador
+        description: "Nome do indicador técnico."
+      - name: valor_indicador
+        description: "Valor do indicador técnico para o ativo no dia."
+
+  - name: tesouro
+    schema: prata
+    description: "Tabela refinada do Tesouro, ajustada para padronizar os dados e traduzir colunas."
+    columns:
+      - name: data
+        description: "Data do registro."
+      - name: rendimento
+        description: "Rendimento do Tesouro no dia."

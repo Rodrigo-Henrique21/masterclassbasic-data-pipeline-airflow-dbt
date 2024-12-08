@@ -1,16 +1,21 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.task_group import TaskGroup
+from airflow.operators.bash import BashOperator
+
 from sqlalchemy import create_engine
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
 import requests
 import os
 import json
 import pandas as pd
 
+load_dotenv()
+
 # Parâmetros gerais
-CHAVE_API_ALPHA_VANTAGE = "V5QSR6OB7WZ5LHGQ"
+CHAVE_API_ALPHA_VANTAGE = os.environ["CHAVE_API"]
 URL_BASE = "https://www.alphavantage.co/query"
 CAMINHO_BRONZE = "/usr/local/airflow/data/bronze"
 INDICADORES = [
@@ -104,8 +109,9 @@ def captura_indicadores_tecnicos(ticker):
 # Funções de carregamento no PostgreSQL
 # Função 2.0: consolidada e persiste os dados na bronze ativos
 def carrega_ativos_para_postgres():
-    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("acao_")]
+    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.endswith("_dados_financeiros.json")]
     dataframes = []
+
     for arquivo in arquivos_json:
         caminho_arquivo = os.path.join(CAMINHO_BRONZE, arquivo)
         with open(caminho_arquivo, 'r') as f:
@@ -113,20 +119,38 @@ def carrega_ativos_para_postgres():
             if "Time Series (Daily)" in dados:
                 df = pd.DataFrame.from_dict(dados["Time Series (Daily)"], orient="index")
                 df.reset_index(inplace=True)
-                df.rename(columns={"index": "data"}, inplace=True)
+                df.rename(columns={
+                    "index": "data",
+                    "1. open": "open",
+                    "2. high": "high",
+                    "3. low": "low",
+                    "4. close": "close",
+                    "5. volume": "volume"
+                }, inplace=True)
                 df["ticker"] = dados["Meta Data"]["2. Symbol"]
+                df = df.astype({
+                    "data": "datetime64",
+                    "open": "float",
+                    "high": "float",
+                    "low": "float",
+                    "close": "float",
+                    "volume": "int64"
+                })
                 dataframes.append(df)
+
     if dataframes:
         df_final = pd.concat(dataframes, ignore_index=True)
         engine = create_engine('postgresql://airflow:airflow@postgres:5432/airflow')
-        df_final.to_sql('ativos', engine, if_exists='replace', index=False)
-        print("Dados de ações carregados no PostgreSQL com sucesso.")
+        with engine.connect() as conn:
+            df_final.to_sql('ativos', con=conn, schema='bronze', if_exists='append', index=False)
+
 
 
 # Função 2.1: consolidada e persiste os dados na bronze indicadores
 def carrega_indicadores_para_postgres():
-    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("indicador_")]
+    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("indicador_") and f.endswith(".json")]
     dataframes = []
+
     for arquivo in arquivos_json:
         caminho_arquivo = os.path.join(CAMINHO_BRONZE, arquivo)
         with open(caminho_arquivo, 'r') as f:
@@ -135,34 +159,53 @@ def carrega_indicadores_para_postgres():
                 if key.startswith("Technical Analysis"):
                     df = pd.DataFrame.from_dict(dados[key], orient="index")
                     df.reset_index(inplace=True)
-                    indicador = dados["Meta Data"]["2: Indicator"]
-                    df.rename(columns={"index": "data", df.columns[1]: indicador}, inplace=True)
+                    df.rename(columns={
+                        "index": "data",
+                        list(df.columns)[1]: "valor"
+                    }, inplace=True)
                     df["ticker"] = dados["Meta Data"]["1: Symbol"]
+                    df["indicador"] = dados["Meta Data"]["2: Indicator"]
+                    df = df.astype({
+                        "data": "datetime64",
+                        "valor": "float"
+                    })
                     dataframes.append(df)
+
     if dataframes:
         df_final = pd.concat(dataframes, ignore_index=True)
         engine = create_engine('postgresql://airflow:airflow@postgres:5432/airflow')
-        df_final.to_sql('indicadores', engine, if_exists='replace', index=False)
-        print("Dados de indicadores carregados no PostgreSQL com sucesso.")
+        with engine.connect() as conn:
+            df_final.to_sql('indicadores', con=conn, schema='bronze', if_exists='append', index=False)
 
 
 # Função 2.2: consolidada e persiste os dados na bronze tesouro
 def carrega_tesouro_para_postgres():
-    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("tesouro_")]
+    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("tesouro_") and f.endswith(".json")]
     dataframes = []
+
     for arquivo in arquivos_json:
         caminho_arquivo = os.path.join(CAMINHO_BRONZE, arquivo)
         with open(caminho_arquivo, 'r') as f:
             dados = json.load(f)
             if "data" in dados:
                 df = pd.DataFrame(dados["data"])
-                df.rename(columns={"date": "data"}, inplace=True)
+                df.rename(columns={
+                    "date": "data",
+                    "value": "valor"
+                }, inplace=True)
+                df = df.astype({
+                    "data": "datetime64",
+                    "valor": "float"
+                })
                 dataframes.append(df)
+
     if dataframes:
         df_final = pd.concat(dataframes, ignore_index=True)
         engine = create_engine('postgresql://airflow:airflow@postgres:5432/airflow')
-        df_final.to_sql('tesouro', engine, if_exists='replace', index=False)
-        print("Dados do Tesouro carregados no PostgreSQL com sucesso.")
+        with engine.connect() as conn:
+            df_final.to_sql('tesouro', con=conn, schema='bronze', if_exists='append', index=False)
+
+
 
 
 # Configuração da DAG
@@ -173,44 +216,59 @@ default_args = {
 }
 
 with DAG(
-    dag_id="captura_e_carregamento_dados_financeiros",
+    dag_id="captura_transformacao_com_taskgroups",
     default_args=default_args,
     schedule_interval="@daily",
-    start_date=datetime(2023, 1, 1),
+    start_date=datetime(2024, 1, 1),
     catchup=False
 ) as dag:
 
+    # Grupo: Captura de Dados
     with TaskGroup("captura_dados") as captura_dados:
-        for ticker in TICKERS:
-            PythonOperator(
-                task_id=f"capturar_acao_{ticker}",
-                python_callable=captura_ativos,
-                op_kwargs={"ticker": ticker}
-            )
-            PythonOperator(
-                task_id=f"capturar_indicadores_{ticker}",
-                python_callable=captura_indicadores_tecnicos,
-                op_kwargs={"ticker": ticker}
-            )
-
-        PythonOperator(
-            task_id="capturar_tesouro",
+        captura_ativos_task = PythonOperator(
+            task_id="captura_ativos",
+            python_callable=captura_ativos
+        )
+        captura_indicadores_task = PythonOperator(
+            task_id="captura_indicadores_tecnicos",
+            python_callable=captura_indicadores_tecnicos
+        )
+        captura_tesouro_task = PythonOperator(
+            task_id="captura_tesouro",
             python_callable=captura_dados_tesouro
         )
 
-    carregar_ativos = PythonOperator(
-        task_id="carregar_ativos_postgres",
-        python_callable=carrega_ativos_para_postgres
-    )
+    # Grupo: Carregamento de Dados
+    with TaskGroup("carregamento_dados") as carregamento_dados:
+        carrega_ativos_task = PythonOperator(
+            task_id="carrega_ativos_para_postgres",
+            python_callable=carrega_ativos_para_postgres
+        )
+        carrega_indicadores_task = PythonOperator(
+            task_id="carrega_indicadores_para_postgres",
+            python_callable=carrega_indicadores_para_postgres
+        )
+        carrega_tesouro_task = PythonOperator(
+            task_id="carrega_tesouro_para_postgres",
+            python_callable=carrega_tesouro_para_postgres
+        )
 
-    carregar_indicadores = PythonOperator(
-        task_id="carregar_indicadores_postgres",
-        python_callable=carrega_indicadores_para_postgres
-    )
+    # Grupo: Transformações com DBT
+    with TaskGroup("transformacoes_dbt") as transformacoes_dbt:
+        run_dbt_silver = BashOperator(
+            task_id="run_dbt_silver",
+            bash_command=(
+                "cd /usr/local/airflow/dbt && "
+                "dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select prata"
+            )
+        )
+        run_dbt_gold = BashOperator(
+            task_id="run_dbt_gold",
+            bash_command=(
+                "cd /usr/local/airflow/dbt && "
+                "dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select ouro"
+            )
+        )
 
-    carregar_tesouro = PythonOperator(
-        task_id="carregar_tesouro_postgres",
-        python_callable=carrega_tesouro_para_postgres
-    )
-
-    captura_dados >> [carregar_ativos, carregar_indicadores, carregar_tesouro]
+    # Fluxo de Dependências
+    captura_dados >> carregamento_dados >> transformacoes_dbt

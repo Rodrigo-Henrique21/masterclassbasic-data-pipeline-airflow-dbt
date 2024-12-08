@@ -6,7 +6,7 @@
 ![GitHub open issues](https://img.shields.io/github/issues/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
 
-<img src="src/img/imagem_exemplo.png" alt="Exemplo imagem">
+<img src="src/img/imagem_project.png" alt="Exemplo imagem">
 
 > Pipeline para ingestão, transformação e orquestração de dados utilizando Airflow e DBT, com um modelo escalável e estruturado.
 

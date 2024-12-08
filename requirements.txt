@@ -1,0 +1,5 @@
+dbt-core==1.8.0
+pendulum==2.1.2
+dbt-postgres==1.8.2
+pandas==1.5.3
+

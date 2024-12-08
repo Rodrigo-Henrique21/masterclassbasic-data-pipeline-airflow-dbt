@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: financial_data_source
+    schema: bronze
+    tables:
+      - name: financial_data
+        description: "Raw financial data ingested from the Bronze layer"

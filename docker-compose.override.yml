@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  webserver:
+    ports:
+      - "8000:8000"  # Porta do DBT Docs
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./plugins:/usr/local/airflow/plugins
+      - ./data:/usr/local/airflow/data
+      - ./dbt:/usr/local/airflow/dbt  # Mapeia toda a pasta dbt
+      - ./dbt/profiles.yml:/home/astro/.dbt/profiles.yml  # Mapeia o profiles.yml para o local esperado
+  scheduler:
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./plugins:/usr/local/airflow/plugins
+      - ./data:/usr/local/airflow/data
+      - ./dbt:/usr/local/airflow/dbt
+      - ./dbt/profiles.yml:/home/astro/.dbt/profiles.yml
+  worker:
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./plugins:/usr/local/airflow/plugins
+      - ./data:/usr/local/airflow/data
+      - ./dbt:/usr/local/airflow/dbt
+      - ./dbt/profiles.yml:/home/astro/.dbt/profiles.yml
+
+volumes:
+  data:

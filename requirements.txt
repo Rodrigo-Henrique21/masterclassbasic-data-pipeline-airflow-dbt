@@ -3,3 +3,4 @@ pendulum==2.1.2
 dbt-postgres==1.8.2
 pandas==1.5.3
 python-dotenv==1.0.1
+requests==2.32.3

@@ -11,6 +11,7 @@ import requests
 import os
 import json
 import pandas as pd
+import logging
 
 load_dotenv()
 
@@ -30,28 +31,28 @@ TICKERS = [
 
 # Funções de captura de dados
 # Função 1.0: Captura os dados do tesouro
-def captura_ativos(ticker):
+def captura_ativos(TICKERS):
     """
     Captura dados das ações e salva na camada Bronze.
     """
-    os.makedirs(CAMINHO_BRONZE, exist_ok=True)
-    parametros = {
-        "function": "TIME_SERIES_DAILY",
-        "symbol": ticker,
-        "apikey": CHAVE_API_ALPHA_VANTAGE,
-        "datatype": "json",
-        "outputsize": "compact"
-    }
-    resposta = requests.get(URL_BASE, params=parametros)
-    if resposta.status_code == 200:
-        dados = resposta.json()
-        nome_arquivo = f"acao_{ticker}.json"
-        caminho_arquivo = os.path.join(CAMINHO_BRONZE, nome_arquivo)
-        with open(caminho_arquivo, "w") as arquivo_json:
-            json.dump(dados, arquivo_json)
-        print(f"Dados do ticker {ticker} salvos em {caminho_arquivo}")
-    else:
-        print(f"Erro ao capturar dados para {ticker}: {resposta.status_code} - {resposta.text}")
+    for ticker in TICKERS:
+        parametros = {
+            "function": "TIME_SERIES_DAILY",
+            "symbol": ticker,
+            "apikey": CHAVE_API_ALPHA_VANTAGE,
+            "datatype": "json",
+            "outputsize": "compact"
+        }
+        resposta = requests.get(URL_BASE, params=parametros)
+        if resposta.status_code == 200:
+            dados = resposta.json()
+            nome_arquivo = f"acao_{ticker}.json"
+            caminho_arquivo = os.path.join(CAMINHO_BRONZE, nome_arquivo)
+            with open(caminho_arquivo, "w") as arquivo_json:
+                json.dump(dados, arquivo_json)
+            print(f"Dados do ticker {ticker} salvos em {caminho_arquivo}")
+        else:
+            print(f"Erro ao capturar dados para {ticker}: {resposta.status_code} - {resposta.text}")
 
 
 # Função 1.1: Captura os dados do tesouro
@@ -80,12 +81,11 @@ def captura_dados_tesouro():
 
 
 # Função 1.2: Captura os dados dos indicadores tecnicos
-def captura_indicadores_tecnicos(ticker):
+def captura_indicadores_tecnicos(INDICADORES,TICKERS):
     """
     Captura indicadores técnicos de um ativo e salva na camada Bronze.
     """
-    os.makedirs(CAMINHO_BRONZE, exist_ok=True)
-    for indicador in INDICADORES:
+    for indicador,ticker in zip(INDICADORES,TICKERS):
         parametros = {
             "function": indicador,
             "symbol": ticker,
@@ -109,7 +109,7 @@ def captura_indicadores_tecnicos(ticker):
 # Funções de carregamento no PostgreSQL
 # Função 2.0: consolidada e persiste os dados na bronze ativos
 def carrega_ativos_para_postgres():
-    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.endswith("_dados_financeiros.json")]
+    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("acao_") and f.endswith(".json")]
     dataframes = []
 
     for arquivo in arquivos_json:
@@ -140,9 +140,9 @@ def carrega_ativos_para_postgres():
 
     if dataframes:
         df_final = pd.concat(dataframes, ignore_index=True)
-        engine = create_engine('postgresql://airflow:airflow@postgres:5432/airflow')
+        engine = create_engine('postgresql://postgres:postgres@postgres:5432/dw_nerds_prd')
         with engine.connect() as conn:
-            df_final.to_sql('ativos', con=conn, schema='bronze', if_exists='append', index=False)
+            df_final.to_sql('ativos', con=conn, schema='bronze', if_exists='replace', index=False)
 
 
 
@@ -173,14 +173,14 @@ def carrega_indicadores_para_postgres():
 
     if dataframes:
         df_final = pd.concat(dataframes, ignore_index=True)
-        engine = create_engine('postgresql://airflow:airflow@postgres:5432/airflow')
+        engine = create_engine('postgresql://postgres:postgres@postgres:5432/dw_nerds_prd')
         with engine.connect() as conn:
-            df_final.to_sql('indicadores', con=conn, schema='bronze', if_exists='append', index=False)
+            df_final.to_sql('indicadores', con=conn, schema='bronze', if_exists='replace', index=False)
 
 
 # Função 2.2: consolidada e persiste os dados na bronze tesouro
 def carrega_tesouro_para_postgres():
-    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("tesouro_") and f.endswith(".json")]
+    arquivos_json = [f for f in os.listdir(CAMINHO_BRONZE) if f.startswith("tesouro") and f.endswith(".json")]
     dataframes = []
 
     for arquivo in arquivos_json:
@@ -193,19 +193,20 @@ def carrega_tesouro_para_postgres():
                     "date": "data",
                     "value": "valor"
                 }, inplace=True)
+                df['valor'] = pd.to_numeric(df['valor'], errors='coerce').round(3)
                 df = df.astype({
                     "data": "datetime64",
                     "valor": "float"
                 })
                 dataframes.append(df)
 
+    logging.debug(f"O arquivo deu certo, tem dados {print(dataframes)}")
     if dataframes:
         df_final = pd.concat(dataframes, ignore_index=True)
-        engine = create_engine('postgresql://airflow:airflow@postgres:5432/airflow')
+        logging.warning(f"O arquivo deu certo, tem dados {df_final.head()}")
+        engine = create_engine('postgresql://postgres:postgres@postgres:5432/dw_nerds_prd')
         with engine.connect() as conn:
-            df_final.to_sql('tesouro', con=conn, schema='bronze', if_exists='append', index=False)
-
-
+            df_final.to_sql('tesouro', con=conn, schema='bronze', if_exists='replace', index=False)
 
 
 # Configuração da DAG
@@ -227,11 +228,13 @@ with DAG(
     with TaskGroup("captura_dados") as captura_dados:
         captura_ativos_task = PythonOperator(
             task_id="captura_ativos",
-            python_callable=captura_ativos
+            python_callable=captura_ativos,
+            op_kwargs={"TICKERS": TICKERS}
         )
         captura_indicadores_task = PythonOperator(
             task_id="captura_indicadores_tecnicos",
-            python_callable=captura_indicadores_tecnicos
+            python_callable=captura_indicadores_tecnicos,
+            op_kwargs={"INDICADORES": INDICADORES, "TICKERS": TICKERS}
         )
         captura_tesouro_task = PythonOperator(
             task_id="captura_tesouro",
@@ -269,6 +272,9 @@ with DAG(
                 "dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select ouro"
             )
         )
+
+        # Dependência entre Silver e Gold
+        run_dbt_silver >> run_dbt_gold
 
     # Fluxo de Dependências
     captura_dados >> carregamento_dados >> transformacoes_dbt

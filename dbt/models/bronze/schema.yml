@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    database: dw_nerds_prd
+    description: "Tabelas brutas na camada bronze do data warehouse."
+    tables:
+      - name: ativos
+        description: "Tabela bruta de ativos financeiros."
+      - name: indicadores
+        description: "Tabela bruta de indicadores técnicos."
+      - name: tesouro
+        description: "Tabela bruta do Tesouro."

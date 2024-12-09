@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: produto_dados_financeiros
+  - name: portfolio
     schema: ouro
     description: "Tabela consolidada com informações de ativos financeiros, indicadores técnicos e rendimento do Tesouro."
     columns:

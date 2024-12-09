@@ -1,4 +1,4 @@
-{{ config(schema="prata", materialized="table") }}
+
 
 WITH indicadores_limpos AS (
     SELECT
@@ -6,7 +6,7 @@ WITH indicadores_limpos AS (
         CAST(valor AS NUMERIC(15, 3)) AS valor_indicador,
         ticker AS ativo, -- Renomeando ticker para ativo
         indicador
-    FROM {{ source('bronze', 'indicadores') }}
+    FROM "dw_nerds_prd"."bronze"."indicadores"
     WHERE data IS NOT NULL
       AND valor IS NOT NULL
 )

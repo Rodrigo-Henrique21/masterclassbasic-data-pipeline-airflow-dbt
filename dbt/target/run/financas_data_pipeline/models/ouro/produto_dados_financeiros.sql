@@ -1,4 +1,14 @@
-{{ config(schema="ouro", materialized="table") }}
+
+  
+    
+
+  create  table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
 
 WITH ativos_base AS (
     SELECT
@@ -9,7 +19,7 @@ WITH ativos_base AS (
         a.preco_baixo,
         a.preco_fechamento,
         a.volume_negociado
-    FROM {{ ref('ativos') }} a  -- Ref para a tabela `prata.ativos`
+    FROM "dw_nerds_prd"."prata"."ativos" a  -- Ref para a tabela `prata.ativos`
 ),
 
 ativos_com_indicadores AS (
@@ -18,7 +28,7 @@ ativos_com_indicadores AS (
         i.indicador,
         i.valor_indicador
     FROM ativos_base ab
-    LEFT JOIN {{ ref('indicadores') }} i  -- Ref para a tabela `prata.indicadores`
+    LEFT JOIN "dw_nerds_prd"."prata"."indicadores" i  -- Ref para a tabela `prata.indicadores`
     ON ab.data = i.data
     AND ab.ativo = i.ativo
 ),
@@ -28,7 +38,7 @@ ativos_com_tesouro AS (
         ai.*,
         t.rendimento AS rendimento_tesouro
     FROM ativos_com_indicadores ai
-    LEFT JOIN {{ ref('tesouro') }} t  -- Ref para a tabela `prata.tesouro`
+    LEFT JOIN "dw_nerds_prd"."prata"."tesouro" t  -- Ref para a tabela `prata.tesouro`
     ON ai.data = t.data
 )
 
@@ -44,3 +54,5 @@ SELECT
     valor_indicador,
     rendimento_tesouro
 FROM ativos_com_tesouro
+  );
+  

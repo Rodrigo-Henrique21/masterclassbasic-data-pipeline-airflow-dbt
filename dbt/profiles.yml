@@ -18,6 +18,6 @@ financas_data:
       user: "{{ env_var('DBT_USER') }}"  # Usuário do banco de dados
       pass: "{{ env_var('DBT_ENV_SECRET_PASSWORD') }}"  # Senha do banco de dados
       dbname: "{{ env_var('DBT_DATABASE', 'dw_nerds_prd') }}"  # Nome do banco de dados (fallback: 'dw_nerds_prd')
-      schema: "{{ env_var('DBT_SCHEMA') }}"  # Esquema padrão (pode ser ajustado no modelo)
+      schema: "{{ env_var('DBT_SCHEMA', 'public') }}"  # Esquema padrão (pode ser ajustado no modelo)
 
   target: prd  # Define o ambiente a ser utilizado

@@ -1,4 +1,14 @@
-{{ config(schema="prata", materialized="table") }}
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."ativos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
 
 WITH ativos_limpos AS (
     SELECT
@@ -9,7 +19,7 @@ WITH ativos_limpos AS (
         CAST(close AS NUMERIC(15, 3)) AS preco_fechamento,
         CAST(volume AS BIGINT) AS volume_negociado,
         ticker AS ativo -- Renomeando ticker para ativo
-    FROM {{ source('bronze', 'ativos') }}
+    FROM "dw_nerds_prd"."bronze"."ativos"
     WHERE data IS NOT NULL
 )
 
@@ -22,3 +32,5 @@ SELECT
     volume_negociado,
     ativo -- Mantendo o nome correto como ativo
 FROM ativos_limpos
+  );
+  

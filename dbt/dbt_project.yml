@@ -20,25 +20,16 @@ clean-targets:
 # Configuração de modelos
 models:
   financas_data_pipeline:
-    +materialized: table  # Configuração padrão para modelos
-    +persist_docs: {"relation": true, "columns": true}  # Persistir documentação
-
-    bronze:
-      +schema: "bronze"
-      +tags: ["bronze"]
-      +materialized: table  # Tabelas para dados crus na camada Bronze
-      +persist_docs: {"relation": true}  # Documentação para tabelas na camada Bronze
-
+    +schema: null  # Evita o comportamento padrão de concatenar prefixos
+    +database: "{{ env_var('DBT_DATABASE') }}"
+    
     prata:
-      +schema: "prata"
+      +schema: "prata"  # Esquema existente no banco
+      +database: "{{ env_var('DBT_DATABASE') }}"
+      +materialized: incremental
       +tags: ["prata"]
-      +materialized: incremental  # Incremental para melhorar performance na camada Prata
-      +incremental_strategy: merge  # Estratégia de atualização incremental
-      +unique_key: ["data", "ativo"]  # Chave única para mesclagem incremental
-      +persist_docs: {"relation": true, "columns": true}  # Persistir documentação completa
 
     ouro:
-      +schema: "ouro"
+      +schema: "ouro"  # Esquema existente no banco
+      +database: "{{ env_var('DBT_DATABASE') }}"
       +tags: ["ouro"]
-      +materialized: table  # Tabelas finais consolidadas na camada Ouro
-      +persist_docs: {"relation": true, "columns": true}  # Persistir documentação completa

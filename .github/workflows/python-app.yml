@@ -17,6 +17,7 @@ jobs:
     env:
       SQLALCHEMY_WARN_20: "1"
       SQLALCHEMY_SILENCE_UBER_WARNING: "1"
+      CHAVE_API: ${{ secrets.CHAVE_API }}
 
     steps:
     - name: Checkout repository
@@ -30,9 +31,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Remover possíveis versões conflitantes
         python -m pip uninstall -y numpy pandas SQLAlchemy || true
-        # Instalar dependências fixadas no requirements.txt
         pip install -r requirements.txt
 
     - name: Run pytest

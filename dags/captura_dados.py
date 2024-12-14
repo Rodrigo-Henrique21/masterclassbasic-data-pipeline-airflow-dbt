@@ -18,7 +18,7 @@ load_dotenv()
 # Parâmetros gerais
 CHAVE_API_ALPHA_VANTAGE = os.environ["CHAVE_API"]
 URL_BASE = "https://www.alphavantage.co/query"
-CAMINHO_BRONZE = "/usr/local/airflow/data/bronze"
+CAMINHO_BRONZE = os.getenv("CAMINHO_BRONZE", "/usr/local/airflow/data/bronze")
 INDICADORES = [
     "EMA", "SMA", "CCI", "WMA", "DEMA", 
     "TEMA", "KAMA", "ADX", "RSI", 

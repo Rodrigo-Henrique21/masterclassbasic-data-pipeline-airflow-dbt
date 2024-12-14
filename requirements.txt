@@ -8,6 +8,7 @@ requests==2.32.3
 
 # Dependências para testes
 pytest>=8.0.0
+flake8>=6.0.0
 
 # Airflow e extras
 apache-airflow[postgres,pandas]==2.5.1

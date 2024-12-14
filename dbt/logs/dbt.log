@@ -6354,3 +6354,2759 @@ drop table if exists "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backu
 [0m01:31:50.161186 [debug] [MainThread]: Command `dbt run` succeeded at 01:31:50.161075 after 1.13 seconds
 [0m01:31:50.162228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f08c1003040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f08bf963670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f08be921820>]}
 [0m01:31:50.163140 [debug] [MainThread]: Flushing usage events
+[0m22:34:40.298082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f8df7100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f70a5670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f70a5610>]}
+
+
+============================== 22:34:40.305361 | ec0a2886-4328-481e-b8f6-6c4a553d1633 ==============================
+[0m22:34:40.305361 [info ] [MainThread]: Running with dbt=1.8.0
+[0m22:34:40.306742 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/local/airflow/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select prata', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:34:40.505864 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f8a0a9d0>]}
+[0m22:34:40.553622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f710f790>]}
+[0m22:34:40.555289 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m22:34:40.630406 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m22:34:40.893614 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:34:40.894719 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:34:40.948498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f62e3130>]}
+[0m22:34:41.074277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f657cd00>]}
+[0m22:34:41.075289 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m22:34:41.076290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f64472e0>]}
+[0m22:34:41.078615 [info ] [MainThread]: 
+[0m22:34:41.079926 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m22:34:41.085334 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m22:34:41.143055 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m22:34:41.144357 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:34:41.145168 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:34:41.148580 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.003 seconds
+[0m22:34:41.150469 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m22:34:41.152298 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_prata)
+[0m22:34:41.152935 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_ouro'
+[0m22:34:41.158767 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:34:41.166384 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:34:41.168304 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m22:34:41.170085 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m22:34:41.171008 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:34:41.171734 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:34:41.174506 [debug] [ThreadPool]: SQL status: BEGIN in 0.003 seconds
+[0m22:34:41.175205 [debug] [ThreadPool]: SQL status: BEGIN in 0.003 seconds
+[0m22:34:41.175724 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:34:41.176552 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:34:41.177424 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m22:34:41.178419 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m22:34:41.184229 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.004 seconds
+[0m22:34:41.184677 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.005 seconds
+[0m22:34:41.186136 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m22:34:41.187689 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m22:34:41.188904 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m22:34:41.189670 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m22:34:41.196091 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:41.197011 [debug] [MainThread]: On master: BEGIN
+[0m22:34:41.197748 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:34:41.200399 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m22:34:41.201203 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:41.202025 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m22:34:41.205004 [debug] [MainThread]: SQL status: SELECT 0 in 0.002 seconds
+[0m22:34:41.206495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f6239940>]}
+[0m22:34:41.207421 [debug] [MainThread]: On master: ROLLBACK
+[0m22:34:41.208276 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:41.209024 [debug] [MainThread]: On master: BEGIN
+[0m22:34:41.209930 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m22:34:41.210806 [debug] [MainThread]: On master: COMMIT
+[0m22:34:41.211548 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:41.212261 [debug] [MainThread]: On master: COMMIT
+[0m22:34:41.213019 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:34:41.213801 [debug] [MainThread]: On master: Close
+[0m22:34:41.214627 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m22:34:41.215460 [info ] [MainThread]: 
+[0m22:34:41.222283 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.ativos
+[0m22:34:41.222748 [debug] [Thread-2  ]: Began running node model.financas_data_pipeline.indicadores
+[0m22:34:41.224780 [info ] [Thread-1  ]: 1 of 3 START sql table model prata.ativos ...................................... [RUN]
+[0m22:34:41.226904 [info ] [Thread-2  ]: 2 of 3 START sql table model prata.indicadores ................................. [RUN]
+[0m22:34:41.228503 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.ativos)
+[0m22:34:41.229525 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_ouro, now model.financas_data_pipeline.indicadores)
+[0m22:34:41.230622 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.ativos
+[0m22:34:41.231810 [debug] [Thread-2  ]: Began compiling node model.financas_data_pipeline.indicadores
+[0m22:34:41.240265 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.ativos"
+[0m22:34:41.243464 [debug] [Thread-2  ]: Writing injected SQL for node "model.financas_data_pipeline.indicadores"
+[0m22:34:41.247508 [debug] [Thread-2  ]: Began executing node model.financas_data_pipeline.indicadores
+[0m22:34:41.248203 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.ativos
+[0m22:34:41.295551 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.ativos"
+[0m22:34:41.296097 [debug] [Thread-2  ]: Writing runtime sql for node "model.financas_data_pipeline.indicadores"
+[0m22:34:41.300329 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:34:41.301742 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: BEGIN
+[0m22:34:41.302348 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:34:41.303022 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m22:34:41.303976 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: BEGIN
+[0m22:34:41.305702 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m22:34:41.307424 [debug] [Thread-1  ]: SQL status: BEGIN in 0.004 seconds
+[0m22:34:41.308547 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:34:41.309041 [debug] [Thread-2  ]: SQL status: BEGIN in 0.003 seconds
+[0m22:34:41.309740 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."ativos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(open AS NUMERIC(15, 3)) AS preco_abertura,
+        CAST(high AS NUMERIC(15, 3)) AS preco_alto,
+        CAST(low AS NUMERIC(15, 3)) AS preco_baixo,
+        CAST(close AS NUMERIC(15, 3)) AS preco_fechamento,
+        CAST(volume AS BIGINT) AS volume_negociado,
+        ticker AS ativo -- Renomeando ticker para ativo
+    FROM "dw_nerds_prd"."bronze"."ativos"
+    WHERE data IS NOT NULL
+)
+
+SELECT
+    data,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    ativo -- Mantendo o nome correto como ativo
+FROM ativos_limpos
+  );
+  
+[0m22:34:41.310515 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:34:41.311753 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."indicadores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH indicadores_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS valor_indicador,
+        ticker AS ativo, -- Renomeando ticker para ativo
+        indicador
+    FROM "dw_nerds_prd"."bronze"."indicadores"
+    WHERE data IS NOT NULL
+      AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    valor_indicador,
+    ativo, -- Mantendo o nome correto como ativo
+    indicador
+FROM indicadores_limpos
+  );
+  
+[0m22:34:41.315933 [debug] [Thread-1  ]: SQL status: SELECT 300 in 0.005 seconds
+[0m22:34:41.323299 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:34:41.324270 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos" rename to "ativos__dbt_backup"
+[0m22:34:41.325667 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m22:34:41.328843 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:34:41.329755 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos__dbt_tmp" rename to "ativos"
+[0m22:34:41.330715 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:41.338119 [debug] [Thread-2  ]: SQL status: SELECT 17725 in 0.026 seconds
+[0m22:34:41.349084 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m22:34:41.352956 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:34:41.354149 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:34:41.355101 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores" rename to "indicadores__dbt_backup"
+[0m22:34:41.356003 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m22:34:41.357231 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:41.360828 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:34:41.361213 [debug] [Thread-1  ]: SQL status: COMMIT in 0.003 seconds
+[0m22:34:41.361833 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores__dbt_tmp" rename to "indicadores"
+[0m22:34:41.367915 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."ativos__dbt_backup"
+[0m22:34:41.368926 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:41.372947 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:34:41.374662 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m22:34:41.375494 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+drop table if exists "dw_nerds_prd"."prata"."ativos__dbt_backup" cascade
+[0m22:34:41.376305 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:34:41.377588 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m22:34:41.378366 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m22:34:41.381432 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: Close
+[0m22:34:41.381914 [debug] [Thread-2  ]: SQL status: COMMIT in 0.003 seconds
+[0m22:34:41.383814 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f57920a0>]}
+[0m22:34:41.386620 [debug] [Thread-2  ]: Applying DROP to: "dw_nerds_prd"."prata"."indicadores__dbt_backup"
+[0m22:34:41.387714 [info ] [Thread-1  ]: 1 of 3 OK created sql table model prata.ativos ................................. [[32mSELECT 300[0m in 0.15s]
+[0m22:34:41.388841 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:34:41.389802 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.ativos
+[0m22:34:41.390490 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+drop table if exists "dw_nerds_prd"."prata"."indicadores__dbt_backup" cascade
+[0m22:34:41.391358 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.tesouro
+[0m22:34:41.392701 [info ] [Thread-1  ]: 3 of 3 START sql table model prata.tesouro ..................................... [RUN]
+[0m22:34:41.393219 [debug] [Thread-2  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m22:34:41.393894 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.financas_data_pipeline.ativos, now model.financas_data_pipeline.tesouro)
+[0m22:34:41.395665 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: Close
+[0m22:34:41.396449 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.tesouro
+[0m22:34:41.397568 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f5792640>]}
+[0m22:34:41.401863 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.tesouro"
+[0m22:34:41.402842 [info ] [Thread-2  ]: 2 of 3 OK created sql table model prata.indicadores ............................ [[32mSELECT 17725[0m in 0.17s]
+[0m22:34:41.404436 [debug] [Thread-2  ]: Finished running node model.financas_data_pipeline.indicadores
+[0m22:34:41.407242 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.tesouro
+[0m22:34:41.412087 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.tesouro"
+[0m22:34:41.419689 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:34:41.421078 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: BEGIN
+[0m22:34:41.422305 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m22:34:41.426103 [debug] [Thread-1  ]: SQL status: BEGIN in 0.004 seconds
+[0m22:34:41.427080 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:34:41.427973 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."tesouro__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH tesouro_limpo AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS rendimento
+    FROM "dw_nerds_prd"."bronze"."tesouro"
+    WHERE data IS NOT NULL AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    rendimento
+FROM tesouro_limpo
+  );
+  
+[0m22:34:41.437514 [debug] [Thread-1  ]: SQL status: SELECT 12129 in 0.009 seconds
+[0m22:34:41.441142 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:34:41.442169 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro" rename to "tesouro__dbt_backup"
+[0m22:34:41.443667 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:41.447406 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:34:41.448289 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro__dbt_tmp" rename to "tesouro"
+[0m22:34:41.449532 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:41.451204 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m22:34:41.451996 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:34:41.452752 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m22:34:41.455205 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m22:34:41.458109 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."tesouro__dbt_backup"
+[0m22:34:41.459117 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:34:41.459862 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+drop table if exists "dw_nerds_prd"."prata"."tesouro__dbt_backup" cascade
+[0m22:34:41.462863 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m22:34:41.464465 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: Close
+[0m22:34:41.465415 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ec0a2886-4328-481e-b8f6-6c4a553d1633', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f4e36bb0>]}
+[0m22:34:41.466459 [info ] [Thread-1  ]: 3 of 3 OK created sql table model prata.tesouro ................................ [[32mSELECT 12129[0m in 0.07s]
+[0m22:34:41.467439 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.tesouro
+[0m22:34:41.468995 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:41.469777 [debug] [MainThread]: On master: BEGIN
+[0m22:34:41.470422 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:34:41.472806 [debug] [MainThread]: SQL status: BEGIN in 0.002 seconds
+[0m22:34:41.473514 [debug] [MainThread]: On master: COMMIT
+[0m22:34:41.474159 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:41.474877 [debug] [MainThread]: On master: COMMIT
+[0m22:34:41.475644 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:34:41.476484 [debug] [MainThread]: On master: Close
+[0m22:34:41.477573 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:34:41.478441 [debug] [MainThread]: Connection 'model.financas_data_pipeline.tesouro' was properly closed.
+[0m22:34:41.479133 [debug] [MainThread]: Connection 'model.financas_data_pipeline.indicadores' was properly closed.
+[0m22:34:41.479955 [info ] [MainThread]: 
+[0m22:34:41.480737 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.40 seconds (0.40s).
+[0m22:34:41.481966 [debug] [MainThread]: Command end result
+[0m22:34:41.521679 [info ] [MainThread]: 
+[0m22:34:41.522836 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:34:41.524032 [info ] [MainThread]: 
+[0m22:34:41.524946 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m22:34:41.526266 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.2900366, "process_user_time": 2.032215, "process_kernel_time": 0.092373, "process_mem_max_rss": "272332", "process_in_blocks": "24840", "process_out_blocks": "0"}
+[0m22:34:41.527285 [debug] [MainThread]: Command `dbt run` succeeded at 22:34:41.527179 after 1.29 seconds
+[0m22:34:41.528110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f8df7100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f88c6160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f59f705bc70>]}
+[0m22:34:41.528964 [debug] [MainThread]: Flushing usage events
+[0m22:34:45.303165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f500877f0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5006a2c520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5006a2c4c0>]}
+
+
+============================== 22:34:45.308918 | 3d3d7fd0-0836-4055-8be6-9ca4d428168c ==============================
+[0m22:34:45.308918 [info ] [MainThread]: Running with dbt=1.8.0
+[0m22:34:45.310144 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/local/airflow/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select ouro', 'send_anonymous_usage_stats': 'True'}
+[0m22:34:45.467099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5006a0f250>]}
+[0m22:34:45.515514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5006a3da30>]}
+[0m22:34:45.517139 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m22:34:45.591474 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m22:34:45.814352 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:34:45.815289 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:34:45.853604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5005c6c130>]}
+[0m22:34:45.988835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5005b86910>]}
+[0m22:34:45.989995 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m22:34:45.991283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5005c46e80>]}
+[0m22:34:45.993706 [info ] [MainThread]: 
+[0m22:34:45.995207 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m22:34:45.996825 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m22:34:46.082542 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m22:34:46.084508 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:34:46.085917 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:34:46.108686 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.023 seconds
+[0m22:34:46.116015 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m22:34:46.125767 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_ouro)
+[0m22:34:46.126738 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_prata'
+[0m22:34:46.137415 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:34:46.141170 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:34:46.142729 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m22:34:46.143953 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m22:34:46.144969 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:34:46.146032 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:34:46.149798 [debug] [ThreadPool]: SQL status: BEGIN in 0.005 seconds
+[0m22:34:46.150552 [debug] [ThreadPool]: SQL status: BEGIN in 0.005 seconds
+[0m22:34:46.151364 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:34:46.152390 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:34:46.153321 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m22:34:46.154215 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m22:34:46.156985 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m22:34:46.157885 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m22:34:46.159409 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m22:34:46.161218 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m22:34:46.162560 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m22:34:46.163372 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m22:34:46.170451 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:46.171542 [debug] [MainThread]: On master: BEGIN
+[0m22:34:46.172566 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:34:46.176252 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m22:34:46.177330 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:46.178246 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m22:34:46.181817 [debug] [MainThread]: SQL status: SELECT 0 in 0.003 seconds
+[0m22:34:46.184063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50060be4c0>]}
+[0m22:34:46.185038 [debug] [MainThread]: On master: ROLLBACK
+[0m22:34:46.186273 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:46.187145 [debug] [MainThread]: On master: BEGIN
+[0m22:34:46.188324 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m22:34:46.189629 [debug] [MainThread]: On master: COMMIT
+[0m22:34:46.190647 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:46.191600 [debug] [MainThread]: On master: COMMIT
+[0m22:34:46.192718 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:34:46.193610 [debug] [MainThread]: On master: Close
+[0m22:34:46.194740 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m22:34:46.195789 [info ] [MainThread]: 
+[0m22:34:46.204239 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:34:46.205524 [info ] [Thread-1  ]: 1 of 1 START sql table model ouro.produto_dados_financeiros .................... [RUN]
+[0m22:34:46.206825 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.produto_dados_financeiros)
+[0m22:34:46.207861 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:34:46.219021 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.227159 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:34:46.272256 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.278745 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.280015 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: BEGIN
+[0m22:34:46.281308 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m22:34:46.284935 [debug] [Thread-1  ]: SQL status: BEGIN in 0.004 seconds
+[0m22:34:46.286515 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.287547 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_base AS (
+    SELECT
+        a.data,
+        a.ativo,
+        a.preco_abertura,
+        a.preco_alto,
+        a.preco_baixo,
+        a.preco_fechamento,
+        a.volume_negociado
+    FROM "dw_nerds_prd"."prata"."ativos" a  -- Ref para a tabela `prata.ativos`
+),
+
+ativos_com_indicadores AS (
+    SELECT
+        ab.*,
+        i.indicador,
+        i.valor_indicador
+    FROM ativos_base ab
+    LEFT JOIN "dw_nerds_prd"."prata"."indicadores" i  -- Ref para a tabela `prata.indicadores`
+    ON ab.data = i.data
+    AND ab.ativo = i.ativo
+),
+
+ativos_com_tesouro AS (
+    SELECT
+        ai.*,
+        t.rendimento AS rendimento_tesouro
+    FROM ativos_com_indicadores ai
+    LEFT JOIN "dw_nerds_prd"."prata"."tesouro" t  -- Ref para a tabela `prata.tesouro`
+    ON ai.data = t.data
+)
+
+SELECT
+    data,
+    ativo,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    indicador,
+    valor_indicador,
+    rendimento_tesouro
+FROM ativos_com_tesouro
+  );
+  
+[0m22:34:46.295296 [debug] [Thread-1  ]: SQL status: SELECT 300 in 0.007 seconds
+[0m22:34:46.302254 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.303282 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros" rename to "produto_dados_financeiros__dbt_backup"
+[0m22:34:46.304415 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:46.307843 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.308659 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp" rename to "produto_dados_financeiros"
+[0m22:34:46.309643 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:34:46.329153 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m22:34:46.330216 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.331076 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m22:34:46.333015 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m22:34:46.341365 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup"
+[0m22:34:46.346308 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:34:46.347329 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+drop table if exists "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup" cascade
+[0m22:34:46.349929 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m22:34:46.353031 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: Close
+[0m22:34:46.355111 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3d3d7fd0-0836-4055-8be6-9ca4d428168c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50083e88b0>]}
+[0m22:34:46.356485 [info ] [Thread-1  ]: 1 of 1 OK created sql table model ouro.produto_dados_financeiros ............... [[32mSELECT 300[0m in 0.15s]
+[0m22:34:46.357534 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:34:46.359201 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:46.360010 [debug] [MainThread]: On master: BEGIN
+[0m22:34:46.360928 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:34:46.363815 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m22:34:46.364769 [debug] [MainThread]: On master: COMMIT
+[0m22:34:46.365624 [debug] [MainThread]: Using ***** connection "master"
+[0m22:34:46.366463 [debug] [MainThread]: On master: COMMIT
+[0m22:34:46.367470 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:34:46.368395 [debug] [MainThread]: On master: Close
+[0m22:34:46.369690 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:34:46.370600 [debug] [MainThread]: Connection 'list_dw_nerds_prd_ouro' was properly closed.
+[0m22:34:46.371433 [debug] [MainThread]: Connection 'model.financas_data_pipeline.produto_dados_financeiros' was properly closed.
+[0m22:34:46.372366 [info ] [MainThread]: 
+[0m22:34:46.373220 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.38 seconds (0.38s).
+[0m22:34:46.374247 [debug] [MainThread]: Command end result
+[0m22:34:46.416608 [info ] [MainThread]: 
+[0m22:34:46.417925 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:34:46.419246 [info ] [MainThread]: 
+[0m22:34:46.420433 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m22:34:46.421958 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.1871066, "process_user_time": 2.145446, "process_kernel_time": 0.090229, "process_mem_max_rss": "272336", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m22:34:46.423158 [debug] [MainThread]: Command `dbt run` succeeded at 22:34:46.423051 after 1.19 seconds
+[0m22:34:46.423982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f500877f0d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50070dc4f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5005b86040>]}
+[0m22:34:46.424806 [debug] [MainThread]: Flushing usage events
+[0m00:00:20.972472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc476f880d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc475236640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc4752365e0>]}
+
+
+============================== 00:00:20.979230 | 5139d03e-f82c-4996-b5a4-26c88d9b09e4 ==============================
+[0m00:00:20.979230 [info ] [MainThread]: Running with dbt=1.8.0
+[0m00:00:20.980225 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/usr/local/airflow/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select prata', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m00:00:21.220029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc47524f130>]}
+[0m00:00:21.280916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc475246d00>]}
+[0m00:00:21.282563 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m00:00:21.355643 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m00:00:21.627176 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:00:21.628166 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:00:21.669364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc474474130>]}
+[0m00:00:21.793169 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc474484460>]}
+[0m00:00:21.795150 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m00:00:21.796440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc474616ee0>]}
+[0m00:00:21.798405 [info ] [MainThread]: 
+[0m00:00:21.799561 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m00:00:21.804264 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m00:00:21.866515 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m00:00:21.867533 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:00:21.868329 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:21.872868 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.004 seconds
+[0m00:00:21.874964 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m00:00:21.876865 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_prata)
+[0m00:00:21.877617 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_ouro'
+[0m00:00:21.883838 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m00:00:21.886425 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m00:00:21.887297 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m00:00:21.888174 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m00:00:21.888986 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:00:21.889878 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:21.892874 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m00:00:21.893657 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m00:00:21.894337 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m00:00:21.895133 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m00:00:21.895913 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m00:00:21.896651 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m00:00:21.899895 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m00:00:21.900256 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.003 seconds
+[0m00:00:21.901743 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m00:00:21.903712 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m00:00:21.905176 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m00:00:21.906048 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m00:00:21.912355 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:21.913431 [debug] [MainThread]: On master: BEGIN
+[0m00:00:21.914351 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:00:21.917231 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m00:00:21.918239 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:21.919144 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m00:00:21.921942 [debug] [MainThread]: SQL status: SELECT 0 in 0.002 seconds
+[0m00:00:21.923578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc474838910>]}
+[0m00:00:21.924664 [debug] [MainThread]: On master: ROLLBACK
+[0m00:00:21.925498 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:21.926229 [debug] [MainThread]: On master: BEGIN
+[0m00:00:21.927178 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m00:00:21.927879 [debug] [MainThread]: On master: COMMIT
+[0m00:00:21.928542 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:21.929205 [debug] [MainThread]: On master: COMMIT
+[0m00:00:21.929955 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m00:00:21.930699 [debug] [MainThread]: On master: Close
+[0m00:00:21.931597 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m00:00:21.932574 [info ] [MainThread]: 
+[0m00:00:21.940923 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.ativos
+[0m00:00:21.941449 [debug] [Thread-2  ]: Began running node model.financas_data_pipeline.indicadores
+[0m00:00:21.942345 [info ] [Thread-1  ]: 1 of 3 START sql table model prata.ativos ...................................... [RUN]
+[0m00:00:21.943416 [info ] [Thread-2  ]: 2 of 3 START sql table model prata.indicadores ................................. [RUN]
+[0m00:00:21.944349 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.ativos)
+[0m00:00:21.945239 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_ouro, now model.financas_data_pipeline.indicadores)
+[0m00:00:21.946242 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.ativos
+[0m00:00:21.947183 [debug] [Thread-2  ]: Began compiling node model.financas_data_pipeline.indicadores
+[0m00:00:21.956779 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.ativos"
+[0m00:00:21.960497 [debug] [Thread-2  ]: Writing injected SQL for node "model.financas_data_pipeline.indicadores"
+[0m00:00:21.965402 [debug] [Thread-2  ]: Began executing node model.financas_data_pipeline.indicadores
+[0m00:00:21.972116 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.ativos
+[0m00:00:22.028325 [debug] [Thread-2  ]: Writing runtime sql for node "model.financas_data_pipeline.indicadores"
+[0m00:00:22.028991 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.ativos"
+[0m00:00:22.033178 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m00:00:22.034309 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: BEGIN
+[0m00:00:22.035120 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m00:00:22.036141 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m00:00:22.037282 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: BEGIN
+[0m00:00:22.039340 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m00:00:22.041049 [debug] [Thread-2  ]: SQL status: BEGIN in 0.005 seconds
+[0m00:00:22.042054 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m00:00:22.042750 [debug] [Thread-1  ]: SQL status: BEGIN in 0.003 seconds
+[0m00:00:22.043597 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."indicadores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH indicadores_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS valor_indicador,
+        ticker AS ativo, -- Renomeando ticker para ativo
+        indicador
+    FROM "dw_nerds_prd"."bronze"."indicadores"
+    WHERE data IS NOT NULL
+      AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    valor_indicador,
+    ativo, -- Mantendo o nome correto como ativo
+    indicador
+FROM indicadores_limpos
+  );
+  
+[0m00:00:22.044493 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m00:00:22.045809 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."ativos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(open AS NUMERIC(15, 3)) AS preco_abertura,
+        CAST(high AS NUMERIC(15, 3)) AS preco_alto,
+        CAST(low AS NUMERIC(15, 3)) AS preco_baixo,
+        CAST(close AS NUMERIC(15, 3)) AS preco_fechamento,
+        CAST(volume AS BIGINT) AS volume_negociado,
+        ticker AS ativo -- Renomeando ticker para ativo
+    FROM "dw_nerds_prd"."bronze"."ativos"
+    WHERE data IS NOT NULL
+)
+
+SELECT
+    data,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    ativo -- Mantendo o nome correto como ativo
+FROM ativos_limpos
+  );
+  
+[0m00:00:22.051225 [debug] [Thread-1  ]: SQL status: SELECT 600 in 0.004 seconds
+[0m00:00:22.059347 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m00:00:22.060534 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos" rename to "ativos__dbt_backup"
+[0m00:00:22.061980 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:22.066129 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m00:00:22.067101 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos__dbt_tmp" rename to "ativos"
+[0m00:00:22.068312 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:22.087389 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m00:00:22.087891 [debug] [Thread-2  ]: SQL status: SELECT 32564 in 0.043 seconds
+[0m00:00:22.088889 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m00:00:22.092822 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m00:00:22.094049 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m00:00:22.094984 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores" rename to "indicadores__dbt_backup"
+[0m00:00:22.096881 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:22.100327 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m00:00:22.100744 [debug] [Thread-1  ]: SQL status: COMMIT in 0.005 seconds
+[0m00:00:22.101397 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores__dbt_tmp" rename to "indicadores"
+[0m00:00:22.109242 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."ativos__dbt_backup"
+[0m00:00:22.110523 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:22.115770 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m00:00:22.118253 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m00:00:22.119548 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+drop table if exists "dw_nerds_prd"."prata"."ativos__dbt_backup" cascade
+[0m00:00:22.120597 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m00:00:22.122205 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m00:00:22.123412 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m00:00:22.124122 [debug] [Thread-2  ]: SQL status: COMMIT in 0.001 seconds
+[0m00:00:22.127218 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: Close
+[0m00:00:22.130656 [debug] [Thread-2  ]: Applying DROP to: "dw_nerds_prd"."prata"."indicadores__dbt_backup"
+[0m00:00:22.132945 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc4739222b0>]}
+[0m00:00:22.134010 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m00:00:22.135466 [info ] [Thread-1  ]: 1 of 3 OK created sql table model prata.ativos ................................. [[32mSELECT 600[0m in 0.19s]
+[0m00:00:22.136548 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+drop table if exists "dw_nerds_prd"."prata"."indicadores__dbt_backup" cascade
+[0m00:00:22.137824 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.ativos
+[0m00:00:22.139621 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.tesouro
+[0m00:00:22.140939 [info ] [Thread-1  ]: 3 of 3 START sql table model prata.tesouro ..................................... [RUN]
+[0m00:00:22.141710 [debug] [Thread-2  ]: SQL status: DROP TABLE in 0.003 seconds
+[0m00:00:22.142668 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.financas_data_pipeline.ativos, now model.financas_data_pipeline.tesouro)
+[0m00:00:22.144907 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: Close
+[0m00:00:22.146107 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.tesouro
+[0m00:00:22.147316 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc4739226a0>]}
+[0m00:00:22.156510 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.tesouro"
+[0m00:00:22.157896 [info ] [Thread-2  ]: 2 of 3 OK created sql table model prata.indicadores ............................ [[32mSELECT 32564[0m in 0.20s]
+[0m00:00:22.159767 [debug] [Thread-2  ]: Finished running node model.financas_data_pipeline.indicadores
+[0m00:00:22.163485 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.tesouro
+[0m00:00:22.168404 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.tesouro"
+[0m00:00:22.173320 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m00:00:22.174612 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: BEGIN
+[0m00:00:22.175631 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m00:00:22.178585 [debug] [Thread-1  ]: SQL status: BEGIN in 0.003 seconds
+[0m00:00:22.179535 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m00:00:22.180540 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."tesouro__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH tesouro_limpo AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS rendimento
+    FROM "dw_nerds_prd"."bronze"."tesouro"
+    WHERE data IS NOT NULL AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    rendimento
+FROM tesouro_limpo
+  );
+  
+[0m00:00:22.193257 [debug] [Thread-1  ]: SQL status: SELECT 12129 in 0.012 seconds
+[0m00:00:22.197971 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m00:00:22.199415 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro" rename to "tesouro__dbt_backup"
+[0m00:00:22.201157 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:22.205642 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m00:00:22.206722 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro__dbt_tmp" rename to "tesouro"
+[0m00:00:22.207870 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:22.209873 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m00:00:22.210983 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m00:00:22.211931 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m00:00:22.214450 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m00:00:22.218096 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."tesouro__dbt_backup"
+[0m00:00:22.219554 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m00:00:22.220657 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+drop table if exists "dw_nerds_prd"."prata"."tesouro__dbt_backup" cascade
+[0m00:00:22.223370 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m00:00:22.226559 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: Close
+[0m00:00:22.228037 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5139d03e-f82c-4996-b5a4-26c88d9b09e4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc474484b80>]}
+[0m00:00:22.229621 [info ] [Thread-1  ]: 3 of 3 OK created sql table model prata.tesouro ................................ [[32mSELECT 12129[0m in 0.09s]
+[0m00:00:22.231004 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.tesouro
+[0m00:00:22.232803 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:22.233823 [debug] [MainThread]: On master: BEGIN
+[0m00:00:22.234703 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:00:22.238306 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m00:00:22.239300 [debug] [MainThread]: On master: COMMIT
+[0m00:00:22.240129 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:22.240906 [debug] [MainThread]: On master: COMMIT
+[0m00:00:22.241764 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m00:00:22.242482 [debug] [MainThread]: On master: Close
+[0m00:00:22.243652 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:00:22.244929 [debug] [MainThread]: Connection 'model.financas_data_pipeline.tesouro' was properly closed.
+[0m00:00:22.245718 [debug] [MainThread]: Connection 'model.financas_data_pipeline.indicadores' was properly closed.
+[0m00:00:22.246473 [info ] [MainThread]: 
+[0m00:00:22.247225 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.45 seconds (0.45s).
+[0m00:00:22.248442 [debug] [MainThread]: Command end result
+[0m00:00:22.288512 [info ] [MainThread]: 
+[0m00:00:22.289520 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:00:22.290255 [info ] [MainThread]: 
+[0m00:00:22.291055 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m00:00:22.292417 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.3956736, "process_user_time": 2.111004, "process_kernel_time": 0.182683, "process_mem_max_rss": "272340", "process_in_blocks": "51496", "process_out_blocks": "0"}
+[0m00:00:22.293344 [debug] [MainThread]: Command `dbt run` succeeded at 00:00:22.293233 after 1.40 seconds
+[0m00:00:22.294502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc476f880d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc4745ca100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc4744842b0>]}
+[0m00:00:22.295439 [debug] [MainThread]: Flushing usage events
+[0m00:00:25.113879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b438c4070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b41b715b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b41b71550>]}
+
+
+============================== 00:00:25.119943 | e709a525-f51b-4d79-ab6d-15238376126d ==============================
+[0m00:00:25.119943 [info ] [MainThread]: Running with dbt=1.8.0
+[0m00:00:25.121065 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'log_path': '/usr/local/airflow/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select ouro', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:00:25.285691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b434d8430>]}
+[0m00:00:25.342468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b427f6eb0>]}
+[0m00:00:25.343952 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m00:00:25.414095 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m00:00:25.637361 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:00:25.638646 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:00:25.679856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b40db0130>]}
+[0m00:00:25.801768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b40dc11c0>]}
+[0m00:00:25.802927 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m00:00:25.804235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b40d8b8e0>]}
+[0m00:00:25.807161 [info ] [MainThread]: 
+[0m00:00:25.808386 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m00:00:25.810016 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m00:00:25.869554 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m00:00:25.870560 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:00:25.871370 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:25.875370 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.004 seconds
+[0m00:00:25.877258 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m00:00:25.883097 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_prata)
+[0m00:00:25.884675 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_ouro'
+[0m00:00:25.892076 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m00:00:25.895013 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m00:00:25.896061 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m00:00:25.896878 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m00:00:25.897670 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:00:25.898494 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:25.901698 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m00:00:25.902430 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m00:00:25.903085 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m00:00:25.904141 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m00:00:25.905473 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m00:00:25.906464 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m00:00:25.909335 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m00:00:25.911534 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m00:00:25.911947 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m00:00:25.912758 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m00:00:25.914359 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m00:00:25.917303 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m00:00:25.923544 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:25.925140 [debug] [MainThread]: On master: BEGIN
+[0m00:00:25.926232 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:00:25.929211 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m00:00:25.930095 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:25.930881 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m00:00:25.933383 [debug] [MainThread]: SQL status: SELECT 0 in 0.002 seconds
+[0m00:00:25.935462 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b40dc11f0>]}
+[0m00:00:25.936710 [debug] [MainThread]: On master: ROLLBACK
+[0m00:00:25.937794 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:25.938645 [debug] [MainThread]: On master: BEGIN
+[0m00:00:25.939887 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m00:00:25.940794 [debug] [MainThread]: On master: COMMIT
+[0m00:00:25.941659 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:25.942487 [debug] [MainThread]: On master: COMMIT
+[0m00:00:25.943457 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m00:00:25.944366 [debug] [MainThread]: On master: Close
+[0m00:00:25.945720 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m00:00:25.946654 [info ] [MainThread]: 
+[0m00:00:25.954015 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.produto_dados_financeiros
+[0m00:00:25.955455 [info ] [Thread-1  ]: 1 of 1 START sql table model ouro.produto_dados_financeiros .................... [RUN]
+[0m00:00:25.956483 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_ouro, now model.financas_data_pipeline.produto_dados_financeiros)
+[0m00:00:25.957356 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.produto_dados_financeiros
+[0m00:00:25.967666 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:25.972284 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.produto_dados_financeiros
+[0m00:00:26.011881 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.017300 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.018258 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: BEGIN
+[0m00:00:26.019185 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m00:00:26.022258 [debug] [Thread-1  ]: SQL status: BEGIN in 0.003 seconds
+[0m00:00:26.023293 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.024893 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_base AS (
+    SELECT
+        a.data,
+        a.ativo,
+        a.preco_abertura,
+        a.preco_alto,
+        a.preco_baixo,
+        a.preco_fechamento,
+        a.volume_negociado
+    FROM "dw_nerds_prd"."prata"."ativos" a  -- Ref para a tabela `prata.ativos`
+),
+
+ativos_com_indicadores AS (
+    SELECT
+        ab.*,
+        i.indicador,
+        i.valor_indicador
+    FROM ativos_base ab
+    LEFT JOIN "dw_nerds_prd"."prata"."indicadores" i  -- Ref para a tabela `prata.indicadores`
+    ON ab.data = i.data
+    AND ab.ativo = i.ativo
+),
+
+ativos_com_tesouro AS (
+    SELECT
+        ai.*,
+        t.rendimento AS rendimento_tesouro
+    FROM ativos_com_indicadores ai
+    LEFT JOIN "dw_nerds_prd"."prata"."tesouro" t  -- Ref para a tabela `prata.tesouro`
+    ON ai.data = t.data
+)
+
+SELECT
+    data,
+    ativo,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    indicador,
+    valor_indicador,
+    rendimento_tesouro
+FROM ativos_com_tesouro
+  );
+  
+[0m00:00:26.054352 [debug] [Thread-1  ]: SQL status: SELECT 600 in 0.028 seconds
+[0m00:00:26.061359 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.062365 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros" rename to "produto_dados_financeiros__dbt_backup"
+[0m00:00:26.063654 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:26.067433 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.068692 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp" rename to "produto_dados_financeiros"
+[0m00:00:26.069910 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:26.089463 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m00:00:26.090504 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.091297 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m00:00:26.092875 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m00:00:26.101401 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup"
+[0m00:00:26.106760 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m00:00:26.107860 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+drop table if exists "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup" cascade
+[0m00:00:26.110017 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m00:00:26.112710 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: Close
+[0m00:00:26.114958 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e709a525-f51b-4d79-ab6d-15238376126d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b4352d6d0>]}
+[0m00:00:26.116429 [info ] [Thread-1  ]: 1 of 1 OK created sql table model ouro.produto_dados_financeiros ............... [[32mSELECT 600[0m in 0.16s]
+[0m00:00:26.117587 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.produto_dados_financeiros
+[0m00:00:26.119912 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:26.120882 [debug] [MainThread]: On master: BEGIN
+[0m00:00:26.121640 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:00:26.125863 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m00:00:26.127489 [debug] [MainThread]: On master: COMMIT
+[0m00:00:26.128460 [debug] [MainThread]: Using ***** connection "master"
+[0m00:00:26.129262 [debug] [MainThread]: On master: COMMIT
+[0m00:00:26.130136 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m00:00:26.130900 [debug] [MainThread]: On master: Close
+[0m00:00:26.131831 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:00:26.132587 [debug] [MainThread]: Connection 'list_dw_nerds_prd_prata' was properly closed.
+[0m00:00:26.133681 [debug] [MainThread]: Connection 'model.financas_data_pipeline.produto_dados_financeiros' was properly closed.
+[0m00:00:26.134770 [info ] [MainThread]: 
+[0m00:00:26.135881 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.33 seconds (0.33s).
+[0m00:00:26.137807 [debug] [MainThread]: Command end result
+[0m00:00:26.180383 [info ] [MainThread]: 
+[0m00:00:26.181560 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:00:26.182464 [info ] [MainThread]: 
+[0m00:00:26.183423 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:00:26.185297 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.1358304, "process_user_time": 1.892947, "process_kernel_time": 0.132302, "process_mem_max_rss": "272336", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m00:00:26.186628 [debug] [MainThread]: Command `dbt run` succeeded at 00:00:26.186428 after 1.14 seconds
+[0m00:00:26.187756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b438c4070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b4221e400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6b4336bac0>]}
+[0m00:00:26.188802 [debug] [MainThread]: Flushing usage events
+[0m02:42:40.030023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6d2cb100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6b579670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6b579610>]}
+
+
+============================== 02:42:40.035569 | b17e6ba2-f8cd-47bc-aec0-91be3e79df64 ==============================
+[0m02:42:40.035569 [info ] [MainThread]: Running with dbt=1.8.0
+[0m02:42:40.036657 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/usr/local/airflow/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select prata', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:42:40.196967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6b73f790>]}
+[0m02:42:40.243446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6ab166a0>]}
+[0m02:42:40.245541 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m02:42:40.310976 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m02:42:40.593251 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m02:42:40.594213 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m02:42:40.630538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6a7b7130>]}
+[0m02:42:40.741141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6a70aeb0>]}
+[0m02:42:40.742588 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m02:42:40.743940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6a7b5640>]}
+[0m02:42:40.746637 [info ] [MainThread]: 
+[0m02:42:40.748250 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m02:42:40.757372 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m02:42:40.822683 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m02:42:40.823762 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m02:42:40.824782 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:42:40.835448 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.011 seconds
+[0m02:42:40.837410 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m02:42:40.839526 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_ouro)
+[0m02:42:40.840284 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_prata'
+[0m02:42:40.846682 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m02:42:40.849046 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m02:42:40.850510 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m02:42:40.851404 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m02:42:40.852278 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:42:40.853001 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:42:40.855936 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:40.856522 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:40.857203 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m02:42:40.858099 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m02:42:40.859307 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m02:42:40.860608 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m02:42:40.869805 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.008 seconds
+[0m02:42:40.870375 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.009 seconds
+[0m02:42:40.872017 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m02:42:40.873636 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m02:42:40.874652 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m02:42:40.875370 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m02:42:40.881746 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:40.882716 [debug] [MainThread]: On master: BEGIN
+[0m02:42:40.883477 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:42:40.886247 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m02:42:40.887005 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:40.887789 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m02:42:40.893148 [debug] [MainThread]: SQL status: SELECT 0 in 0.005 seconds
+[0m02:42:40.894968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6ab683a0>]}
+[0m02:42:40.895969 [debug] [MainThread]: On master: ROLLBACK
+[0m02:42:40.896868 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:40.897617 [debug] [MainThread]: On master: BEGIN
+[0m02:42:40.898523 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m02:42:40.899538 [debug] [MainThread]: On master: COMMIT
+[0m02:42:40.900501 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:40.901330 [debug] [MainThread]: On master: COMMIT
+[0m02:42:40.902197 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m02:42:40.902937 [debug] [MainThread]: On master: Close
+[0m02:42:40.903781 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m02:42:40.904583 [info ] [MainThread]: 
+[0m02:42:40.912207 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.ativos
+[0m02:42:40.912718 [debug] [Thread-2  ]: Began running node model.financas_data_pipeline.indicadores
+[0m02:42:40.914270 [info ] [Thread-1  ]: 1 of 3 START sql table model prata.ativos ...................................... [RUN]
+[0m02:42:40.915258 [info ] [Thread-2  ]: 2 of 3 START sql table model prata.indicadores ................................. [RUN]
+[0m02:42:40.916150 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_ouro, now model.financas_data_pipeline.ativos)
+[0m02:42:40.916974 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.indicadores)
+[0m02:42:40.917761 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.ativos
+[0m02:42:40.918515 [debug] [Thread-2  ]: Began compiling node model.financas_data_pipeline.indicadores
+[0m02:42:40.927430 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.ativos"
+[0m02:42:40.930976 [debug] [Thread-2  ]: Writing injected SQL for node "model.financas_data_pipeline.indicadores"
+[0m02:42:40.934307 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.ativos
+[0m02:42:40.940656 [debug] [Thread-2  ]: Began executing node model.financas_data_pipeline.indicadores
+[0m02:42:40.995575 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.ativos"
+[0m02:42:40.996287 [debug] [Thread-2  ]: Writing runtime sql for node "model.financas_data_pipeline.indicadores"
+[0m02:42:41.000300 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m02:42:41.001277 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m02:42:41.002222 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: BEGIN
+[0m02:42:41.003321 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: BEGIN
+[0m02:42:41.004520 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m02:42:41.005530 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m02:42:41.008651 [debug] [Thread-1  ]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:41.009451 [debug] [Thread-2  ]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:41.010102 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m02:42:41.011120 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m02:42:41.012092 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."ativos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(open AS NUMERIC(15, 3)) AS preco_abertura,
+        CAST(high AS NUMERIC(15, 3)) AS preco_alto,
+        CAST(low AS NUMERIC(15, 3)) AS preco_baixo,
+        CAST(close AS NUMERIC(15, 3)) AS preco_fechamento,
+        CAST(volume AS BIGINT) AS volume_negociado,
+        ticker AS ativo -- Renomeando ticker para ativo
+    FROM "dw_nerds_prd"."bronze"."ativos"
+    WHERE data IS NOT NULL
+)
+
+SELECT
+    data,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    ativo -- Mantendo o nome correto como ativo
+FROM ativos_limpos
+  );
+  
+[0m02:42:41.013043 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."indicadores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH indicadores_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS valor_indicador,
+        ticker AS ativo, -- Renomeando ticker para ativo
+        indicador
+    FROM "dw_nerds_prd"."bronze"."indicadores"
+    WHERE data IS NOT NULL
+      AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    valor_indicador,
+    ativo, -- Mantendo o nome correto como ativo
+    indicador
+FROM indicadores_limpos
+  );
+  
+[0m02:42:41.029474 [debug] [Thread-1  ]: SQL status: SELECT 600 in 0.015 seconds
+[0m02:42:41.038360 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m02:42:41.039514 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos" rename to "ativos__dbt_backup"
+[0m02:42:41.041215 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m02:42:41.044812 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m02:42:41.045632 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos__dbt_tmp" rename to "ativos"
+[0m02:42:41.046706 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m02:42:41.065114 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m02:42:41.065626 [debug] [Thread-2  ]: SQL status: SELECT 32564 in 0.051 seconds
+[0m02:42:41.066395 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m02:42:41.069918 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m02:42:41.071140 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m02:42:41.072062 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores" rename to "indicadores__dbt_backup"
+[0m02:42:41.073999 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m02:42:41.078211 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m02:42:41.078649 [debug] [Thread-1  ]: SQL status: COMMIT in 0.006 seconds
+[0m02:42:41.079708 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores__dbt_tmp" rename to "indicadores"
+[0m02:42:41.086162 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."ativos__dbt_backup"
+[0m02:42:41.087179 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m02:42:41.091425 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m02:42:41.093317 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m02:42:41.094153 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+drop table if exists "dw_nerds_prd"."prata"."ativos__dbt_backup" cascade
+[0m02:42:41.094886 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m02:42:41.096132 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m02:42:41.098687 [debug] [Thread-2  ]: SQL status: COMMIT in 0.002 seconds
+[0m02:42:41.101643 [debug] [Thread-2  ]: Applying DROP to: "dw_nerds_prd"."prata"."indicadores__dbt_backup"
+[0m02:42:41.102085 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.006 seconds
+[0m02:42:41.102928 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m02:42:41.105636 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: Close
+[0m02:42:41.106565 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+drop table if exists "dw_nerds_prd"."prata"."indicadores__dbt_backup" cascade
+[0m02:42:41.108592 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6e304c40>]}
+[0m02:42:41.110433 [info ] [Thread-1  ]: 1 of 3 OK created sql table model prata.ativos ................................. [[32mSELECT 600[0m in 0.19s]
+[0m02:42:41.111230 [debug] [Thread-2  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m02:42:41.111977 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.ativos
+[0m02:42:41.113613 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: Close
+[0m02:42:41.114531 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.tesouro
+[0m02:42:41.115556 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d69c297f0>]}
+[0m02:42:41.116334 [info ] [Thread-1  ]: 3 of 3 START sql table model prata.tesouro ..................................... [RUN]
+[0m02:42:41.117285 [info ] [Thread-2  ]: 2 of 3 OK created sql table model prata.indicadores ............................ [[32mSELECT 32564[0m in 0.20s]
+[0m02:42:41.118221 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.financas_data_pipeline.ativos, now model.financas_data_pipeline.tesouro)
+[0m02:42:41.119312 [debug] [Thread-2  ]: Finished running node model.financas_data_pipeline.indicadores
+[0m02:42:41.120183 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.tesouro
+[0m02:42:41.124139 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.tesouro"
+[0m02:42:41.128203 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.tesouro
+[0m02:42:41.132919 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.tesouro"
+[0m02:42:41.140637 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m02:42:41.141615 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: BEGIN
+[0m02:42:41.142620 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m02:42:41.146045 [debug] [Thread-1  ]: SQL status: BEGIN in 0.003 seconds
+[0m02:42:41.147149 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m02:42:41.147994 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."tesouro__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH tesouro_limpo AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS rendimento
+    FROM "dw_nerds_prd"."bronze"."tesouro"
+    WHERE data IS NOT NULL AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    rendimento
+FROM tesouro_limpo
+  );
+  
+[0m02:42:41.160067 [debug] [Thread-1  ]: SQL status: SELECT 12129 in 0.011 seconds
+[0m02:42:41.163810 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m02:42:41.164729 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro" rename to "tesouro__dbt_backup"
+[0m02:42:41.166323 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m02:42:41.169718 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m02:42:41.170643 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro__dbt_tmp" rename to "tesouro"
+[0m02:42:41.171706 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m02:42:41.173308 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m02:42:41.174032 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m02:42:41.174829 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m02:42:41.176812 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m02:42:41.179440 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."tesouro__dbt_backup"
+[0m02:42:41.180428 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m02:42:41.181250 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+drop table if exists "dw_nerds_prd"."prata"."tesouro__dbt_backup" cascade
+[0m02:42:41.183281 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m02:42:41.184892 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: Close
+[0m02:42:41.185812 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b17e6ba2-f8cd-47bc-aec0-91be3e79df64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6935c550>]}
+[0m02:42:41.186839 [info ] [Thread-1  ]: 3 of 3 OK created sql table model prata.tesouro ................................ [[32mSELECT 12129[0m in 0.07s]
+[0m02:42:41.187876 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.tesouro
+[0m02:42:41.189512 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:41.190844 [debug] [MainThread]: On master: BEGIN
+[0m02:42:41.191592 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m02:42:41.194251 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m02:42:41.195025 [debug] [MainThread]: On master: COMMIT
+[0m02:42:41.195820 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:41.196508 [debug] [MainThread]: On master: COMMIT
+[0m02:42:41.197402 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m02:42:41.198144 [debug] [MainThread]: On master: Close
+[0m02:42:41.199232 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:42:41.200351 [debug] [MainThread]: Connection 'model.financas_data_pipeline.tesouro' was properly closed.
+[0m02:42:41.201208 [debug] [MainThread]: Connection 'model.financas_data_pipeline.indicadores' was properly closed.
+[0m02:42:41.202048 [info ] [MainThread]: 
+[0m02:42:41.202920 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.45 seconds (0.45s).
+[0m02:42:41.204436 [debug] [MainThread]: Command end result
+[0m02:42:41.241336 [info ] [MainThread]: 
+[0m02:42:41.242396 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:42:41.243275 [info ] [MainThread]: 
+[0m02:42:41.244176 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m02:42:41.245503 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.2811053, "process_user_time": 1.888938, "process_kernel_time": 0.164676, "process_mem_max_rss": "271964", "process_in_blocks": "2320", "process_out_blocks": "0"}
+[0m02:42:41.246532 [debug] [MainThread]: Command `dbt run` succeeded at 02:42:41.246436 after 1.28 seconds
+[0m02:42:41.247429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6d2cb100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6a70a700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d6a70a730>]}
+[0m02:42:41.248279 [debug] [MainThread]: Flushing usage events
+[0m02:42:44.941349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b900300d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8e2de520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8e2de4c0>]}
+
+
+============================== 02:42:44.946715 | 5763d34d-b12f-406e-b3b9-43ffdcebf5f9 ==============================
+[0m02:42:44.946715 [info ] [MainThread]: Running with dbt=1.8.0
+[0m02:42:44.947818 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/local/airflow/dbt/logs', 'profiles_dir': '/usr/local/airflow/dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select ouro', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:42:45.087691 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8d9706d0>]}
+[0m02:42:45.139309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8e98bb20>]}
+[0m02:42:45.141024 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m02:42:45.207758 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m02:42:45.430182 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m02:42:45.431633 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m02:42:45.472514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8d51d130>]}
+[0m02:42:45.589923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8d471ee0>]}
+[0m02:42:45.591100 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m02:42:45.592118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8d6901c0>]}
+[0m02:42:45.593860 [info ] [MainThread]: 
+[0m02:42:45.594945 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m02:42:45.596344 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m02:42:45.651700 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m02:42:45.652773 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m02:42:45.653641 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:42:45.657199 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.004 seconds
+[0m02:42:45.658803 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m02:42:45.663935 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_prata)
+[0m02:42:45.664570 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_ouro'
+[0m02:42:45.670409 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m02:42:45.672561 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m02:42:45.673400 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m02:42:45.674148 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m02:42:45.674877 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:42:45.675679 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:42:45.679332 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:45.680055 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:45.680664 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m02:42:45.681493 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m02:42:45.682320 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m02:42:45.683126 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m02:42:45.685468 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m02:42:45.686025 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m02:42:45.687421 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m02:42:45.689019 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m02:42:45.689953 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m02:42:45.690702 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m02:42:45.697006 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:45.699182 [debug] [MainThread]: On master: BEGIN
+[0m02:42:45.700287 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:42:45.703813 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:45.704631 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:45.705517 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m02:42:45.707948 [debug] [MainThread]: SQL status: SELECT 0 in 0.002 seconds
+[0m02:42:45.709855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b91ff0d60>]}
+[0m02:42:45.710888 [debug] [MainThread]: On master: ROLLBACK
+[0m02:42:45.711771 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:45.712644 [debug] [MainThread]: On master: BEGIN
+[0m02:42:45.713623 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m02:42:45.714374 [debug] [MainThread]: On master: COMMIT
+[0m02:42:45.715110 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:45.715848 [debug] [MainThread]: On master: COMMIT
+[0m02:42:45.716754 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m02:42:45.717524 [debug] [MainThread]: On master: Close
+[0m02:42:45.718469 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m02:42:45.719396 [info ] [MainThread]: 
+[0m02:42:45.727544 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.produto_dados_financeiros
+[0m02:42:45.728635 [info ] [Thread-1  ]: 1 of 1 START sql table model ouro.produto_dados_financeiros .................... [RUN]
+[0m02:42:45.729632 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.produto_dados_financeiros)
+[0m02:42:45.730450 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.produto_dados_financeiros
+[0m02:42:45.739647 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.744214 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.produto_dados_financeiros
+[0m02:42:45.790526 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.795530 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.796533 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: BEGIN
+[0m02:42:45.797472 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m02:42:45.801742 [debug] [Thread-1  ]: SQL status: BEGIN in 0.004 seconds
+[0m02:42:45.802881 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.803790 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_base AS (
+    SELECT
+        a.data,
+        a.ativo,
+        a.preco_abertura,
+        a.preco_alto,
+        a.preco_baixo,
+        a.preco_fechamento,
+        a.volume_negociado
+    FROM "dw_nerds_prd"."prata"."ativos" a  -- Ref para a tabela `prata.ativos`
+),
+
+ativos_com_indicadores AS (
+    SELECT
+        ab.*,
+        i.indicador,
+        i.valor_indicador
+    FROM ativos_base ab
+    LEFT JOIN "dw_nerds_prd"."prata"."indicadores" i  -- Ref para a tabela `prata.indicadores`
+    ON ab.data = i.data
+    AND ab.ativo = i.ativo
+),
+
+ativos_com_tesouro AS (
+    SELECT
+        ai.*,
+        t.rendimento AS rendimento_tesouro
+    FROM ativos_com_indicadores ai
+    LEFT JOIN "dw_nerds_prd"."prata"."tesouro" t  -- Ref para a tabela `prata.tesouro`
+    ON ai.data = t.data
+)
+
+SELECT
+    data,
+    ativo,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    indicador,
+    valor_indicador,
+    rendimento_tesouro
+FROM ativos_com_tesouro
+  );
+  
+[0m02:42:45.834115 [debug] [Thread-1  ]: SQL status: SELECT 600 in 0.029 seconds
+[0m02:42:45.841616 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.842839 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros" rename to "produto_dados_financeiros__dbt_backup"
+[0m02:42:45.844174 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m02:42:45.847538 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.848340 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp" rename to "produto_dados_financeiros"
+[0m02:42:45.849459 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m02:42:45.869840 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m02:42:45.871408 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.872912 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m02:42:45.875092 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m02:42:45.882158 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup"
+[0m02:42:45.886665 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m02:42:45.887624 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+drop table if exists "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup" cascade
+[0m02:42:45.890529 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m02:42:45.893804 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: Close
+[0m02:42:45.895708 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5763d34d-b12f-406e-b3b9-43ffdcebf5f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8c0c9730>]}
+[0m02:42:45.896805 [info ] [Thread-1  ]: 1 of 1 OK created sql table model ouro.produto_dados_financeiros ............... [[32mSELECT 600[0m in 0.17s]
+[0m02:42:45.897861 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.produto_dados_financeiros
+[0m02:42:45.899827 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:45.901162 [debug] [MainThread]: On master: BEGIN
+[0m02:42:45.902176 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m02:42:45.905278 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m02:42:45.906131 [debug] [MainThread]: On master: COMMIT
+[0m02:42:45.906958 [debug] [MainThread]: Using ***** connection "master"
+[0m02:42:45.907760 [debug] [MainThread]: On master: COMMIT
+[0m02:42:45.908632 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m02:42:45.909389 [debug] [MainThread]: On master: Close
+[0m02:42:45.910633 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:42:45.911811 [debug] [MainThread]: Connection 'model.financas_data_pipeline.produto_dados_financeiros' was properly closed.
+[0m02:42:45.912634 [debug] [MainThread]: Connection 'list_dw_nerds_prd_ouro' was properly closed.
+[0m02:42:45.913450 [info ] [MainThread]: 
+[0m02:42:45.914315 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m02:42:45.915430 [debug] [MainThread]: Command end result
+[0m02:42:45.957758 [info ] [MainThread]: 
+[0m02:42:45.958829 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:42:45.959970 [info ] [MainThread]: 
+[0m02:42:45.961226 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m02:42:45.962680 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.0718836, "process_user_time": 1.765309, "process_kernel_time": 0.138844, "process_mem_max_rss": "271964", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m02:42:45.963740 [debug] [MainThread]: Command `dbt run` succeeded at 02:42:45.963629 after 1.07 seconds
+[0m02:42:45.964619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b900300d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8e98e4f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b8d4719a0>]}
+[0m02:42:45.965398 [debug] [MainThread]: Flushing usage events
+[0m22:00:22.150126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa260654040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25e9035b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25e903550>]}
+
+
+============================== 22:00:22.156004 | 176521b1-51d2-42b0-ae5d-3461dc1cac9d ==============================
+[0m22:00:22.156004 [info ] [MainThread]: Running with dbt=1.8.0
+[0m22:00:22.157096 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/local/airflow/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select prata', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:22.321779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25df539a0>]}
+[0m22:00:22.371456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25e916a00>]}
+[0m22:00:22.373740 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m22:00:22.443009 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m22:00:22.684917 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:00:22.685895 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:00:22.727507 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25db40130>]}
+[0m22:00:22.856335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25de80490>]}
+[0m22:00:22.858274 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m22:00:22.859288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25de80520>]}
+[0m22:00:22.861341 [info ] [MainThread]: 
+[0m22:00:22.862858 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m22:00:22.867621 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m22:00:22.940889 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m22:00:22.942149 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:00:22.943195 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:00:22.948379 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.005 seconds
+[0m22:00:22.950868 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m22:00:22.953383 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_ouro)
+[0m22:00:22.954188 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_prata'
+[0m22:00:22.961984 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:00:22.965737 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:00:22.967138 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m22:00:22.968073 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m22:00:22.968976 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:00:22.969823 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:00:22.972721 [debug] [ThreadPool]: SQL status: BEGIN in 0.004 seconds
+[0m22:00:22.973260 [debug] [ThreadPool]: SQL status: BEGIN in 0.003 seconds
+[0m22:00:22.974037 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:00:22.974860 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:00:22.975838 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m22:00:22.976738 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m22:00:22.982001 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.004 seconds
+[0m22:00:22.982445 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.004 seconds
+[0m22:00:22.983984 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m22:00:22.985829 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m22:00:22.986861 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m22:00:22.987768 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m22:00:22.996965 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:22.998019 [debug] [MainThread]: On master: BEGIN
+[0m22:00:22.998857 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:00:23.001891 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m22:00:23.002693 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:23.003477 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m22:00:23.006623 [debug] [MainThread]: SQL status: SELECT 0 in 0.002 seconds
+[0m22:00:23.008288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25de5e8b0>]}
+[0m22:00:23.009281 [debug] [MainThread]: On master: ROLLBACK
+[0m22:00:23.010158 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:23.010861 [debug] [MainThread]: On master: BEGIN
+[0m22:00:23.011948 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m22:00:23.012705 [debug] [MainThread]: On master: COMMIT
+[0m22:00:23.013590 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:23.014408 [debug] [MainThread]: On master: COMMIT
+[0m22:00:23.015305 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:00:23.016263 [debug] [MainThread]: On master: Close
+[0m22:00:23.017243 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m22:00:23.018079 [info ] [MainThread]: 
+[0m22:00:23.026685 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.ativos
+[0m22:00:23.027199 [debug] [Thread-2  ]: Began running node model.financas_data_pipeline.indicadores
+[0m22:00:23.028176 [info ] [Thread-1  ]: 1 of 3 START sql table model prata.ativos ...................................... [RUN]
+[0m22:00:23.029426 [info ] [Thread-2  ]: 2 of 3 START sql table model prata.indicadores ................................. [RUN]
+[0m22:00:23.030553 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.ativos)
+[0m22:00:23.031447 [debug] [Thread-2  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_ouro, now model.financas_data_pipeline.indicadores)
+[0m22:00:23.032369 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.ativos
+[0m22:00:23.033254 [debug] [Thread-2  ]: Began compiling node model.financas_data_pipeline.indicadores
+[0m22:00:23.041984 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.ativos"
+[0m22:00:23.045388 [debug] [Thread-2  ]: Writing injected SQL for node "model.financas_data_pipeline.indicadores"
+[0m22:00:23.049511 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.ativos
+[0m22:00:23.055805 [debug] [Thread-2  ]: Began executing node model.financas_data_pipeline.indicadores
+[0m22:00:23.106430 [debug] [Thread-2  ]: Writing runtime sql for node "model.financas_data_pipeline.indicadores"
+[0m22:00:23.107947 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.ativos"
+[0m22:00:23.112778 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:00:23.114129 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: BEGIN
+[0m22:00:23.114732 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:00:23.115575 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m22:00:23.116848 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: BEGIN
+[0m22:00:23.119326 [debug] [Thread-2  ]: Opening a new connection, currently in state closed
+[0m22:00:23.121272 [debug] [Thread-1  ]: SQL status: BEGIN in 0.005 seconds
+[0m22:00:23.122653 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:00:23.124045 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."ativos__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(open AS NUMERIC(15, 3)) AS preco_abertura,
+        CAST(high AS NUMERIC(15, 3)) AS preco_alto,
+        CAST(low AS NUMERIC(15, 3)) AS preco_baixo,
+        CAST(close AS NUMERIC(15, 3)) AS preco_fechamento,
+        CAST(volume AS BIGINT) AS volume_negociado,
+        ticker AS ativo -- Renomeando ticker para ativo
+    FROM "dw_nerds_prd"."bronze"."ativos"
+    WHERE data IS NOT NULL
+)
+
+SELECT
+    data,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    ativo -- Mantendo o nome correto como ativo
+FROM ativos_limpos
+  );
+  
+[0m22:00:23.126113 [debug] [Thread-2  ]: SQL status: BEGIN in 0.007 seconds
+[0m22:00:23.127157 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:00:23.128304 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."indicadores__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH indicadores_limpos AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS valor_indicador,
+        ticker AS ativo, -- Renomeando ticker para ativo
+        indicador
+    FROM "dw_nerds_prd"."bronze"."indicadores"
+    WHERE data IS NOT NULL
+      AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    valor_indicador,
+    ativo, -- Mantendo o nome correto como ativo
+    indicador
+FROM indicadores_limpos
+  );
+  
+[0m22:00:23.130749 [debug] [Thread-1  ]: SQL status: SELECT 400 in 0.004 seconds
+[0m22:00:23.139859 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:00:23.140452 [debug] [Thread-2  ]: SQL status: SELECT 6312 in 0.011 seconds
+[0m22:00:23.141238 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos" rename to "ativos__dbt_backup"
+[0m22:00:23.144939 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:00:23.146309 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:23.147072 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores" rename to "indicadores__dbt_backup"
+[0m22:00:23.150655 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:00:23.151986 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:23.152550 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+alter table "dw_nerds_prd"."prata"."ativos__dbt_tmp" rename to "ativos"
+[0m22:00:23.155776 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:00:23.156801 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:23.157343 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+alter table "dw_nerds_prd"."prata"."indicadores__dbt_tmp" rename to "indicadores"
+[0m22:00:23.175829 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m22:00:23.176649 [debug] [Thread-2  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:23.177275 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:00:23.179309 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m22:00:23.180339 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: COMMIT
+[0m22:00:23.181134 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:00:23.182381 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: COMMIT
+[0m22:00:23.182738 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m22:00:23.184030 [debug] [Thread-2  ]: SQL status: COMMIT in 0.001 seconds
+[0m22:00:23.190285 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."ativos__dbt_backup"
+[0m22:00:23.193708 [debug] [Thread-2  ]: Applying DROP to: "dw_nerds_prd"."prata"."indicadores__dbt_backup"
+[0m22:00:23.198975 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.ativos"
+[0m22:00:23.200410 [debug] [Thread-2  ]: Using ***** connection "model.financas_data_pipeline.indicadores"
+[0m22:00:23.201423 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.ativos"} */
+drop table if exists "dw_nerds_prd"."prata"."ativos__dbt_backup" cascade
+[0m22:00:23.202232 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.indicadores"} */
+drop table if exists "dw_nerds_prd"."prata"."indicadores__dbt_backup" cascade
+[0m22:00:23.204763 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m22:00:23.205249 [debug] [Thread-2  ]: SQL status: DROP TABLE in 0.002 seconds
+[0m22:00:23.208080 [debug] [Thread-1  ]: On model.financas_data_pipeline.ativos: Close
+[0m22:00:23.209881 [debug] [Thread-2  ]: On model.financas_data_pipeline.indicadores: Close
+[0m22:00:23.211876 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2602be850>]}
+[0m22:00:23.212852 [debug] [Thread-2  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25c6b9040>]}
+[0m22:00:23.213780 [info ] [Thread-1  ]: 1 of 3 OK created sql table model prata.ativos ................................. [[32mSELECT 400[0m in 0.18s]
+[0m22:00:23.214942 [info ] [Thread-2  ]: 2 of 3 OK created sql table model prata.indicadores ............................ [[32mSELECT 6312[0m in 0.18s]
+[0m22:00:23.216146 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.ativos
+[0m22:00:23.217161 [debug] [Thread-2  ]: Finished running node model.financas_data_pipeline.indicadores
+[0m22:00:23.218048 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.tesouro
+[0m22:00:23.219489 [info ] [Thread-1  ]: 3 of 3 START sql table model prata.tesouro ..................................... [RUN]
+[0m22:00:23.220442 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.financas_data_pipeline.ativos, now model.financas_data_pipeline.tesouro)
+[0m22:00:23.221292 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.tesouro
+[0m22:00:23.225731 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.tesouro"
+[0m22:00:23.230810 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.tesouro
+[0m22:00:23.235759 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.tesouro"
+[0m22:00:23.244706 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:00:23.246080 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: BEGIN
+[0m22:00:23.247264 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m22:00:23.251422 [debug] [Thread-1  ]: SQL status: BEGIN in 0.004 seconds
+[0m22:00:23.252533 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:00:23.253505 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."prata"."tesouro__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH tesouro_limpo AS (
+    SELECT
+        CAST(data AS DATE) AS data,
+        CAST(valor AS NUMERIC(15, 3)) AS rendimento
+    FROM "dw_nerds_prd"."bronze"."tesouro"
+    WHERE data IS NOT NULL AND valor IS NOT NULL
+)
+
+SELECT
+    data,
+    rendimento
+FROM tesouro_limpo
+  );
+  
+[0m22:00:23.267745 [debug] [Thread-1  ]: SQL status: SELECT 12131 in 0.013 seconds
+[0m22:00:23.271704 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:00:23.272867 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro" rename to "tesouro__dbt_backup"
+[0m22:00:23.274122 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:23.278202 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:00:23.279289 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+alter table "dw_nerds_prd"."prata"."tesouro__dbt_tmp" rename to "tesouro"
+[0m22:00:23.280514 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:23.282490 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m22:00:23.283674 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:00:23.284656 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: COMMIT
+[0m22:00:23.288184 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m22:00:23.291841 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."prata"."tesouro__dbt_backup"
+[0m22:00:23.293502 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.tesouro"
+[0m22:00:23.294711 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.tesouro"} */
+drop table if exists "dw_nerds_prd"."prata"."tesouro__dbt_backup" cascade
+[0m22:00:23.296826 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m22:00:23.298938 [debug] [Thread-1  ]: On model.financas_data_pipeline.tesouro: Close
+[0m22:00:23.300103 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '176521b1-51d2-42b0-ae5d-3461dc1cac9d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25c6b9040>]}
+[0m22:00:23.301312 [info ] [Thread-1  ]: 3 of 3 OK created sql table model prata.tesouro ................................ [[32mSELECT 12131[0m in 0.08s]
+[0m22:00:23.302445 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.tesouro
+[0m22:00:23.304303 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:23.305232 [debug] [MainThread]: On master: BEGIN
+[0m22:00:23.306124 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:00:23.309551 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m22:00:23.310676 [debug] [MainThread]: On master: COMMIT
+[0m22:00:23.311566 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:23.312547 [debug] [MainThread]: On master: COMMIT
+[0m22:00:23.313571 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:00:23.314401 [debug] [MainThread]: On master: Close
+[0m22:00:23.315788 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:00:23.317004 [debug] [MainThread]: Connection 'model.financas_data_pipeline.indicadores' was properly closed.
+[0m22:00:23.317826 [debug] [MainThread]: Connection 'model.financas_data_pipeline.tesouro' was properly closed.
+[0m22:00:23.319503 [info ] [MainThread]: 
+[0m22:00:23.321768 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 0.46 seconds (0.46s).
+[0m22:00:23.323104 [debug] [MainThread]: Command end result
+[0m22:00:23.369209 [info ] [MainThread]: 
+[0m22:00:23.370335 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:00:23.371219 [info ] [MainThread]: 
+[0m22:00:23.372074 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m22:00:23.373502 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.2815986, "process_user_time": 2.058581, "process_kernel_time": 0.132482, "process_mem_max_rss": "273764", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m22:00:23.374478 [debug] [MainThread]: Command `dbt run` succeeded at 22:00:23.374383 after 1.28 seconds
+[0m22:00:23.375429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa260654040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25f028730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa25db886a0>]}
+[0m22:00:23.376745 [debug] [MainThread]: Flushing usage events
+[0m22:00:26.039272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4391de040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff43748d5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff43748d550>]}
+
+
+============================== 22:00:26.047245 | ff5c0a3f-b31e-4a46-9127-30632e88c560 ==============================
+[0m22:00:26.047245 [info ] [MainThread]: Running with dbt=1.8.0
+[0m22:00:26.048487 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/usr/local/airflow/dbt', 'log_path': '/usr/local/airflow/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /usr/local/airflow/dbt --project-dir /usr/local/airflow/dbt --select ouro', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:00:26.196032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff436ade9a0>]}
+[0m22:00:26.254227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff43749d6d0>]}
+[0m22:00:26.256229 [info ] [MainThread]: Registered adapter: *****=1.8.2
+[0m22:00:26.339882 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m22:00:26.580538 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:00:26.581770 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:00:26.622518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4366ca130>]}
+[0m22:00:26.740956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff436a0a490>]}
+[0m22:00:26.742078 [info ] [MainThread]: Found 4 models, 6 sources, 429 macros
+[0m22:00:26.743011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff436a0a520>]}
+[0m22:00:26.744806 [info ] [MainThread]: 
+[0m22:00:26.745947 [debug] [MainThread]: Acquiring new ***** connection 'master'
+[0m22:00:26.747661 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd'
+[0m22:00:26.812712 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd"
+[0m22:00:26.813912 [debug] [ThreadPool]: On list_dw_nerds_prd: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:00:26.814814 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:00:26.818552 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.004 seconds
+[0m22:00:26.820336 [debug] [ThreadPool]: On list_dw_nerds_prd: Close
+[0m22:00:26.824992 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dw_nerds_prd, now list_dw_nerds_prd_ouro)
+[0m22:00:26.825609 [debug] [ThreadPool]: Acquiring new ***** connection 'list_dw_nerds_prd_prata'
+[0m22:00:26.832635 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:00:26.834917 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:00:26.835904 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: BEGIN
+[0m22:00:26.836979 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: BEGIN
+[0m22:00:26.838075 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:00:26.839160 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:00:26.842614 [debug] [ThreadPool]: SQL status: BEGIN in 0.005 seconds
+[0m22:00:26.843640 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_ouro"
+[0m22:00:26.844450 [debug] [ThreadPool]: SQL status: BEGIN in 0.005 seconds
+[0m22:00:26.844906 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_ouro"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'ouro'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'ouro'
+  
+[0m22:00:26.846370 [debug] [ThreadPool]: Using ***** connection "list_dw_nerds_prd_prata"
+[0m22:00:26.847885 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "list_dw_nerds_prd_prata"} */
+select
+      'dw_nerds_prd' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'prata'
+    union all
+    select
+      'dw_nerds_prd' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'prata'
+  
+[0m22:00:26.849012 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m22:00:26.850649 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: ROLLBACK
+[0m22:00:26.851228 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.002 seconds
+[0m22:00:26.851838 [debug] [ThreadPool]: On list_dw_nerds_prd_ouro: Close
+[0m22:00:26.853380 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: ROLLBACK
+[0m22:00:26.855474 [debug] [ThreadPool]: On list_dw_nerds_prd_prata: Close
+[0m22:00:26.861109 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:26.862074 [debug] [MainThread]: On master: BEGIN
+[0m22:00:26.862883 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:00:26.865821 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m22:00:26.867072 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:26.868079 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m22:00:26.871396 [debug] [MainThread]: SQL status: SELECT 0 in 0.002 seconds
+[0m22:00:26.872921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff437442b80>]}
+[0m22:00:26.873762 [debug] [MainThread]: On master: ROLLBACK
+[0m22:00:26.874570 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:26.875246 [debug] [MainThread]: On master: BEGIN
+[0m22:00:26.876193 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m22:00:26.876935 [debug] [MainThread]: On master: COMMIT
+[0m22:00:26.877598 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:26.878299 [debug] [MainThread]: On master: COMMIT
+[0m22:00:26.879172 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:00:26.880016 [debug] [MainThread]: On master: Close
+[0m22:00:26.880971 [info ] [MainThread]: Concurrency: 2 threads (target='prd')
+[0m22:00:26.881953 [info ] [MainThread]: 
+[0m22:00:26.891953 [debug] [Thread-1  ]: Began running node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:00:26.893073 [info ] [Thread-1  ]: 1 of 1 START sql table model ouro.produto_dados_financeiros .................... [RUN]
+[0m22:00:26.894076 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dw_nerds_prd_prata, now model.financas_data_pipeline.produto_dados_financeiros)
+[0m22:00:26.894940 [debug] [Thread-1  ]: Began compiling node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:00:26.906405 [debug] [Thread-1  ]: Writing injected SQL for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:26.912012 [debug] [Thread-1  ]: Began executing node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:00:26.952559 [debug] [Thread-1  ]: Writing runtime sql for node "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:26.958822 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:26.959781 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: BEGIN
+[0m22:00:26.961098 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m22:00:26.965413 [debug] [Thread-1  ]: SQL status: BEGIN in 0.005 seconds
+[0m22:00:26.966929 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:26.968146 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+
+  
+    
+
+  create  table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+WITH ativos_base AS (
+    SELECT
+        a.data,
+        a.ativo,
+        a.preco_abertura,
+        a.preco_alto,
+        a.preco_baixo,
+        a.preco_fechamento,
+        a.volume_negociado
+    FROM "dw_nerds_prd"."prata"."ativos" a  -- Ref para a tabela `prata.ativos`
+),
+
+ativos_com_indicadores AS (
+    SELECT
+        ab.*,
+        i.indicador,
+        i.valor_indicador
+    FROM ativos_base ab
+    LEFT JOIN "dw_nerds_prd"."prata"."indicadores" i  -- Ref para a tabela `prata.indicadores`
+    ON ab.data = i.data
+    AND ab.ativo = i.ativo
+),
+
+ativos_com_tesouro AS (
+    SELECT
+        ai.*,
+        t.rendimento AS rendimento_tesouro
+    FROM ativos_com_indicadores ai
+    LEFT JOIN "dw_nerds_prd"."prata"."tesouro" t  -- Ref para a tabela `prata.tesouro`
+    ON ai.data = t.data
+)
+
+SELECT
+    data,
+    ativo,
+    preco_abertura,
+    preco_alto,
+    preco_baixo,
+    preco_fechamento,
+    volume_negociado,
+    indicador,
+    valor_indicador,
+    rendimento_tesouro
+FROM ativos_com_tesouro
+  );
+  
+[0m22:00:26.979168 [debug] [Thread-1  ]: SQL status: SELECT 400 in 0.010 seconds
+[0m22:00:26.985556 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:26.986484 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros" rename to "produto_dados_financeiros__dbt_backup"
+[0m22:00:26.987731 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:26.991062 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:26.992089 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+alter table "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_tmp" rename to "produto_dados_financeiros"
+[0m22:00:26.993392 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:00:27.013296 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m22:00:27.014927 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:27.015974 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: COMMIT
+[0m22:00:27.017830 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m22:00:27.025081 [debug] [Thread-1  ]: Applying DROP to: "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup"
+[0m22:00:27.030785 [debug] [Thread-1  ]: Using ***** connection "model.financas_data_pipeline.produto_dados_financeiros"
+[0m22:00:27.032186 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "financas_data", "target_name": "prd", "node_id": "model.financas_data_pipeline.produto_dados_financeiros"} */
+drop table if exists "dw_nerds_prd"."ouro"."produto_dados_financeiros__dbt_backup" cascade
+[0m22:00:27.034506 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m22:00:27.037328 [debug] [Thread-1  ]: On model.financas_data_pipeline.produto_dados_financeiros: Close
+[0m22:00:27.039215 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ff5c0a3f-b31e-4a46-9127-30632e88c560', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff438e49850>]}
+[0m22:00:27.040840 [info ] [Thread-1  ]: 1 of 1 OK created sql table model ouro.produto_dados_financeiros ............... [[32mSELECT 400[0m in 0.14s]
+[0m22:00:27.042185 [debug] [Thread-1  ]: Finished running node model.financas_data_pipeline.produto_dados_financeiros
+[0m22:00:27.044034 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:27.044843 [debug] [MainThread]: On master: BEGIN
+[0m22:00:27.045620 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:00:27.049970 [debug] [MainThread]: SQL status: BEGIN in 0.004 seconds
+[0m22:00:27.050920 [debug] [MainThread]: On master: COMMIT
+[0m22:00:27.051878 [debug] [MainThread]: Using ***** connection "master"
+[0m22:00:27.052710 [debug] [MainThread]: On master: COMMIT
+[0m22:00:27.053658 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:00:27.054448 [debug] [MainThread]: On master: Close
+[0m22:00:27.055521 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:00:27.056339 [debug] [MainThread]: Connection 'list_dw_nerds_prd_ouro' was properly closed.
+[0m22:00:27.057111 [debug] [MainThread]: Connection 'model.financas_data_pipeline.produto_dados_financeiros' was properly closed.
+[0m22:00:27.057943 [info ] [MainThread]: 
+[0m22:00:27.058849 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.31 seconds (0.31s).
+[0m22:00:27.060116 [debug] [MainThread]: Command end result
+[0m22:00:27.103504 [info ] [MainThread]: 
+[0m22:00:27.104842 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:00:27.105858 [info ] [MainThread]: 
+[0m22:00:27.106862 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m22:00:27.108608 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.1328996, "process_user_time": 1.889742, "process_kernel_time": 0.129298, "process_mem_max_rss": "273772", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m22:00:27.109690 [debug] [MainThread]: Command `dbt run` succeeded at 22:00:27.109597 after 1.13 seconds
+[0m22:00:27.110599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff4391de040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff437b3a3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff436a2a0a0>]}
+[0m22:00:27.111462 [debug] [MainThread]: Flushing usage events

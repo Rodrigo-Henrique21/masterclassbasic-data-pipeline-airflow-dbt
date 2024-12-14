@@ -17,6 +17,8 @@ jobs:
     env:
       SQLALCHEMY_WARN_20: "1"
       SQLALCHEMY_SILENCE_UBER_WARNING: "1"
+      CHAVE_API: ${{ secrets.CHAVE_API }}
+
 
     steps:
     - name: Checkout repository

@@ -10,6 +10,12 @@ USER astro
 # Copiando o arquivo de dependências do Python
 COPY requirements.txt /tmp/requirements.txt
 
+# Copiando parte de CD - testes 
+COPY pytest.ini /usr/local/airflow/
+
+# Copiando parte de CD - testes 
+COPY tests /usr/local/airflow/tests
+
 # Instalando dependências Python
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 

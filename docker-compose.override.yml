@@ -35,6 +35,5 @@ services:
       - ./data:/usr/local/airflow/data
       - ./dbt:/usr/local/airflow/dbt
       - ./dbt/profiles.yml:/home/astro/.dbt/profiles.yml
-
 volumes:
   data:

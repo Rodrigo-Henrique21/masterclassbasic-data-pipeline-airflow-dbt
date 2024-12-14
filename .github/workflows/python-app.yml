@@ -30,9 +30,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Remove versões conflitantes de pandas e numpy
+        # Remove possíveis versões conflitantes de numpy e pandas
         python -m pip uninstall -y numpy pandas || true
-        # Instalar as dependências a partir do arquivo requirements.txt
+        # Instalar todas as dependências
         pip install -r requirements.txt
 
     - name: Lint with flake8

@@ -5,6 +5,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
 ![GitHub open issues](https://img.shields.io/github/issues/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Rodrigo-Henrique21/data-pipeline-airflow-dbt?style=for-the-badge)
+[![Python application](https://github.com/Rodrigo-Henrique21/data-pipeline-airflow-dbt/actions/workflows/python-app.yml/badge.svg)](https://github.com/Rodrigo-Henrique21/data-pipeline-airflow-dbt/actions/workflows/python-app.yml)
 
 <img src="src/img/imagem_project.png" alt="Exemplo imagem">
 

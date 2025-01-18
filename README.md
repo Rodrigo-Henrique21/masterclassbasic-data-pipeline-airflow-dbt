@@ -18,8 +18,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Estruturação do ambiente
 - [x] Captura e ingestão de dados.
 - [x] Implementação do modelo DBT para camadas Bronze, Silver e Gold.
-- [ ] Validação de qualidade de dados.
-- [ ] PowerBi
+- [x] Validação de qualidade de dados.
+- [x] PowerBi
 
 
 ## 💻 Pré-requisitos
